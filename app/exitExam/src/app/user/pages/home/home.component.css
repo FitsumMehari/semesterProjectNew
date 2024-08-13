@@ -99,3 +99,44 @@
     background-color: #FEF1E2;
     color: #1D4645;
 }
+
+
+/* fourth section */
+
+.description {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.description-content {
+    width: 35rem
+}
+
+.description-title {
+    font-size: 2rem;
+}
+
+.description-paragraph {
+    margin-top: 3rem;
+    letter-spacing: 0.1rem;
+}
+
+.logos {
+    margin-top: 2rem;
+    width: 20rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo {
+    width: 5rem;
+    margin: 0.5rem;
+}
+
+.description-image img {
+    height: 10rem;
+}
