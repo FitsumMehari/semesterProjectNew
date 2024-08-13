@@ -21,8 +21,22 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: UserComponent,
   },
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sing-up', component: SignUpComponent},
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'contact-us', component: ContactUsComponent},
+  {path: 'materials', component: MaterialsComponent},
+  {path: 'exam', component: ExamHomeComponent},
+  {path: 'question', component: QuestionComponent},
+  {path: 'result', component: ResultComponent},
+  {path: 'otp-verification', component: OtpVerificationComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'create-new-password', component: CreateNewPasswordComponent},
+  {path: 'profile', component: UpdateProfileComponent},
+  {path: 'reset-password', component: ResetPasswordComponent},
+
 ];
 
 @NgModule({
