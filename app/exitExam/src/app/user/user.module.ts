@@ -16,8 +16,14 @@ import { ExamHomeComponent } from './pages/exam-home/exam-home.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { ResultComponent } from './pages/result/result.component';
 import { MessageComponent } from './pages/message/message.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -36,11 +42,9 @@ import { MessageComponent } from './pages/message/message.component';
     ExamHomeComponent,
     QuestionComponent,
     ResultComponent,
-    MessageComponent
+    MessageComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [
     UserComponent,
     HomeComponent,
@@ -57,7 +61,7 @@ import { MessageComponent } from './pages/message/message.component';
     ExamHomeComponent,
     QuestionComponent,
     ResultComponent,
-    MessageComponent
-  ]
+    MessageComponent,
+  ],
 })
-export class UserModule { }
+export class UserModule {}
