@@ -1,0 +1,101 @@
+.exams-div div {
+    border: 1px solid red;
+}
+
+.banner-div {
+    background-color: rgba(173, 171, 195, 0.1);
+}
+
+.banner {
+    color: #0A215F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-title {
+    padding-left: 0.5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 35rem;
+    border-left: 0.5rem solid #0A215F;
+}
+
+.banner-subtitle {
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+}
+
+.banner-paragraph {
+    padding-left: 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .03rem;
+}
+
+.get-started-button {
+    margin-left: 1rem;
+    background-color: #0A215F;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+}
+
+.get-started-button:hover {
+    background-color: #10369e;
+}
+
+
+/* second section */
+
+.exams-div {
+    background-color: rgba(10, 30, 95, .5);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding: 2rem;
+    height: 30rem;
+}
+
+.card {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 15rem;
+}
+
+.card img {
+    height: 8rem;
+}
+
+.card p {
+    margin: 2rem;
+}
+
+.card-1 {
+    position: absolute;
+    bottom: -2rem;
+    left: 10rem;
+    background-color: #DBEDF5;
+    color: #1D4645;
+}
+
+.card-2 {
+    position: absolute;
+    bottom: 5rem;
+    left: 35rem;
+    background-color: #102F2E;
+    color: #fff;
+}
+
+.card-3 {
+    position: absolute;
+    bottom: 10rem;
+    left: 60rem;
+    background-color: #FEF1E2;
+    color: #1D4645;
+}
