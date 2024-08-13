@@ -1,0 +1,8 @@
+nav {
+    padding: 0 2rem;
+    background-color: white !important;
+}
+
+.active {
+    text-decoration: underline;
+}
