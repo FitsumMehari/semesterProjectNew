@@ -27,7 +27,9 @@ label {
 }
 
 input,
-select {
+select,
+option,
+button {
     font-size: 0.8rem;
     width: 20rem;
 }
@@ -51,4 +53,17 @@ button:hover {
 
 .login-link u:hover {
     color: rgb(67, 67, 250);
+}
+
+.password-field,
+.confirm-password-field {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 1rem;
+    top: 46%;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
