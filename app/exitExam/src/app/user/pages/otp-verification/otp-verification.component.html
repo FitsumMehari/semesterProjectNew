@@ -1,1 +1,27 @@
-<p>otp-verification works!</p>
+<div class="container page">
+    <div class="form card" style="border-radius: 15px">
+        <div class="card-body">
+            <h2 class="text-uppercase fs-4 text-center mb-3 form-title">Verification</h2>
+
+            <form>
+
+                <p>We have sent the OTP verification code to your email address check your email and enter the code below. </p>
+
+                <div class="form-outline mb-2">
+                    <label class="" for="code">Code</label>
+                    <input type="text" id="code" class="form-control" />
+                </div>
+
+                <div class="mt-2">
+                    <button type="button" class="btn btn-primary login-button">
+          Confirm
+        </button>
+                </div>
+                <div class="mt-2">
+                    <a [routerLink]="['/user/sign-in']" type="button" class="btn btn-light back-button mt-1">Back to Sign In</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+</div>
