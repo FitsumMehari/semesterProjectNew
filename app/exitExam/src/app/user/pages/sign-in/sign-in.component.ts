@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class SignInComponent {
 
+
+  togglePassword(elementId:string) {
+   var element =  document.getElementById(elementId);
+   if (element?.getAttribute('type') == 'password') {
+    element.setAttribute('type', 'text');
+  } else if (element?.getAttribute('type') == 'text') {
+    element.setAttribute('type', 'password');
+  }
+}
 }
