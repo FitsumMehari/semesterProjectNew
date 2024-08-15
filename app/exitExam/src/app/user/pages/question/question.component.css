@@ -1,0 +1,91 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exam-title {
+    background-color: #dfedf6;
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.index {
+    background-color: rgba(104, 104, 104, 10%);
+    height: auto;
+    border-radius: 1rem;
+}
+
+.index .index-title {
+    padding: 2rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a215f;
+}
+
+.index .index-time {
+    padding: 2rem;
+    padding-bottom: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2a3450;
+}
+
+.exam {
+    background-color: #dfedf6;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.question {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.choice {
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navigation {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    width: 22rem;
+}
+
+.navigation .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.navigation .row button {
+    font-size: 0.6rem;
+    width: 1rem;
+    font-weight: 900;
+    color: black;
+    border: 0.1rem solid grey;
+}
+
+.navigation .row button:hover {
+    background-color: grey;
+}
