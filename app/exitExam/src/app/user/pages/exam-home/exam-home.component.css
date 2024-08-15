@@ -1,0 +1,40 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(167, 167, 167);
+    margin-bottom: 3rem;
+}
+
+.exam-select-btn {
+    width: 15rem;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+.exam-select-btn:hover {
+    background-color: #c9c9c9;
+}
+
+.exam-btn {
+    background-color: #0A215F;
+}
+
+.exam-btn:hover {
+    background-color: #325cd1;
+}
