@@ -23,7 +23,7 @@ const routes: Routes = [
     path: '',
     component: UserComponent,
     children: [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'sign-in', component: SignInComponent },
       { path: 'sign-up', component: SignUpComponent },
       { path: 'about-us', component: AboutUsComponent },
@@ -35,11 +35,11 @@ const routes: Routes = [
       { path: 'otp-verification', component: OtpVerificationComponent },
       { path: 'home', component: HomeComponent },
       { path: 'create-new-password', component: CreateNewPasswordComponent },
-      { path: 'profile', component: UpdateProfileComponent },
+      { path: 'update-profile', component: UpdateProfileComponent },
       { path: 'reset-password', component: ResetPasswordComponent },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
-
 ];
 
 @NgModule({
