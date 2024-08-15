@@ -1,0 +1,60 @@
+button {
+    border: none;
+    background: none;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0.5turn, #5B6590, #fff);
+}
+
+.materials-card {
+    margin-top: 4rem;
+}
+
+.materials-card .title {
+    color: #0A215F;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.materials-card .mateials-list {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.materials-card .mateials-list .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0A215F;
+    padding-top: 2rem;
+    border-bottom: .1rem solid black;
+    margin: 0 2rem;
+}
+
+.materials-card .mateials-list .body li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    border-bottom: .1rem solid black;
+    margin: 0 2rem;
+}
+
+.materials-card .mateials-list .body li p {
+    padding-top: 1rem;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.materials-card .mateials-list .body li i {
+    -webkit-text-stroke: .1rem;
+    font-weight: bold;
+    color: #0A215F;
+}
