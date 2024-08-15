@@ -1,0 +1,252 @@
+.banner-div {
+    background-color: rgba(173, 171, 195, 0.1);
+}
+
+.banner {
+    color: #0A215F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-title {
+    padding-left: 0.5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 35rem;
+    border-left: 0.5rem solid #0A215F;
+}
+
+.banner-subtitle {
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+}
+
+.banner-paragraph {
+    padding-left: 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .03rem;
+}
+
+.get-started-button {
+    margin-left: 1rem;
+    background-color: #0A215F;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+}
+
+.get-started-button:hover {
+    background-color: #10369e;
+}
+
+
+/* second section */
+
+.exams-div {
+    background-color: rgba(10, 30, 95, .5);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding: 2rem;
+    height: 25rem;
+}
+
+.exams-div img {
+    height: 47rem;
+    position: absolute;
+    top: -4rem;
+    right: 8rem;
+}
+
+.exams-div p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    bottom: 8rem;
+    left: 8rem;
+}
+
+
+/* fourth section */
+
+.description {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1D4645;
+}
+
+.description-contents {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45rem;
+}
+
+.description-paragraph {
+    font-size: 1.1rem;
+    /* margin-top: 3rem; */
+    /* letter-spacing: 0.1rem; */
+    width: 30rem;
+}
+
+.description-logo {
+    width: 10rem;
+    /* margin: 0.5rem; */
+}
+
+
+/* teams */
+
+.teams {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+    background-color: rgba(10, 33, 95, .10);
+}
+
+.teams .title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1D4645;
+    margin-left: 9rem;
+    margin-bottom: 2rem;
+}
+
+.team-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.team-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 16rem;
+    height: 15rem;
+    background-color: #FFF2E6;
+    border-radius: .5rem;
+}
+
+.team-card img {
+    width: 4rem;
+}
+
+.team-card .name {
+    margin-top: .5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1D4645;
+}
+
+.team-card .role {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+
+/* footer */
+
+footer {
+    padding-top: 3rem;
+    background: linear-gradient(0.25turn, #fff, rgba(10, 33, 95, 0.1), #fff);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-sections {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+
+footer .footer-sections .footer-img {
+    height: 2rem;
+}
+
+footer .footer-sections .footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-sections .footer-nav .footer-title {
+    font-weight: 600;
+}
+
+footer .footer-sections .footer-nav .links {
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+footer .footer-sections .footer-nav .links a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+footer .footer-sections .footer-nav .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-sections .footer-nav .icons .icon {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    background-color: #0A215F;
+    color: white;
+    border-radius: 50%;
+}
+
+footer .footer-sections .footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-sections .footer-buttons .btn {
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+
+footer .copyright {
+    padding-top: 1rem;
+    text-align: center;
+    border-top: .1rem solid rgba(47, 58, 255, 0.5);
+    width: 100%;
+}
