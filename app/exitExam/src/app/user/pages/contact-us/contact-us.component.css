@@ -1,0 +1,122 @@
+.banner-div {
+    background-color: rgba(173, 171, 195, 0.1);
+}
+
+.banner {
+    color: #0A215F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-title {
+    padding-left: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    width: 35rem;
+}
+
+.banner-subtitle {
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    text-decoration: underline;
+}
+
+.banner-subtitle i {
+    padding-right: .8rem;
+}
+
+.banner-value {
+    padding-left: 2.8rem;
+}
+
+.map {
+    height: 20rem;
+    padding: 3rem;
+}
+
+
+/* footer */
+
+footer {
+    padding-top: 3rem;
+    background: linear-gradient(0.25turn, #fff, rgba(10, 33, 95, 0.1), #fff);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-sections {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+
+footer .footer-sections .footer-img {
+    height: 2rem;
+}
+
+footer .footer-sections .footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-sections .footer-nav .footer-title {
+    font-weight: 600;
+}
+
+footer .footer-sections .footer-nav .links {
+    width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+footer .footer-sections .footer-nav .links a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+footer .footer-sections .footer-nav .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-sections .footer-nav .icons .icon {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    background-color: #0A215F;
+    color: white;
+    border-radius: 50%;
+}
+
+footer .footer-sections .footer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-sections .footer-buttons .btn {
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+
+footer .copyright {
+    padding-top: 1rem;
+    text-align: center;
+    border-top: .1rem solid rgba(47, 58, 255, 0.5);
+    width: 100%;
+}
