@@ -60,14 +60,14 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .navigation {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 1rem;
-    border: 1px solid black;
+    border: 1px solid grey;
     width: 22rem;
 }
 
@@ -88,4 +88,8 @@
 
 .navigation .row button:hover {
     background-color: grey;
+}
+
+.active {
+    background-color: rgb(0, 120, 233);
 }
