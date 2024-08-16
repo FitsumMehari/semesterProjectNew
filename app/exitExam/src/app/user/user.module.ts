@@ -17,6 +17,7 @@ import { QuestionComponent } from './pages/question/question.component';
 import { ResultComponent } from './pages/result/result.component';
 import { MessageComponent } from './pages/message/message.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -61,7 +62,7 @@ const routes: Routes = [
     ResultComponent,
     MessageComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
   exports: [
     UserComponent,
     HomeComponent,
