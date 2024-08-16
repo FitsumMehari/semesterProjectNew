@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './sign-in.component.css',
 })
 export class SignInComponent {
+
+  email:string = '';
+  password:string = '';
+
+// For the toggle password eye button
   togglePassword(elementId: string) {
     var element = document.getElementById(elementId);
     if (element?.getAttribute('type') == 'password') {
@@ -13,5 +18,11 @@ export class SignInComponent {
     } else if (element?.getAttribute('type') == 'text') {
       element.setAttribute('type', 'password');
     }
+  }
+
+  // Login Method
+  login(formValues:any) {
+console.log(formValues);
+
   }
 }

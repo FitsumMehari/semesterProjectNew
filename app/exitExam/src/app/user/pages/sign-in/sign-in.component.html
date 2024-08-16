@@ -5,17 +5,17 @@
                 Login
             </h2>
 
-            <form #loginForm="ngForm">
+            <form #loginForm="ngForm" (submit)="login(loginForm.value)">
 
 
                 <div class="form-outline mb-2">
                     <label class="" for="email">Email</label>
-                    <input type="email" id="email" class="form-control" />
+                    <input type="email" (ngmodel)="email" name="email" id="email" class="form-control" />
                 </div>
 
                 <div class="password-field form-outline mb-2">
                     <label class="" for="password">Password</label>
-                    <input type="password" id="password" class="form-control" />
+                    <input type="password" (ngmodel)="password" name="password" id="password" class="form-control" />
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
 
