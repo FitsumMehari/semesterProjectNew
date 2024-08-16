@@ -115,6 +115,7 @@ footer .footer-sections .footer-buttons .btn {
 }
 
 footer .copyright {
+    margin-top: 2rem;
     padding-top: 1rem;
     text-align: center;
     border-top: .1rem solid rgba(47, 58, 255, 0.5);
