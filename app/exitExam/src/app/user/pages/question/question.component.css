@@ -64,21 +64,16 @@
 }
 
 .navigation {
-    background-color: #ffffff;
-    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    padding: 1rem;
     border-radius: 1rem;
     border: 1px solid grey;
     width: 22rem;
 }
 
-.navigation .row {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.navigation .row button {
+.navigation button {
+    margin: .2rem;
     font-size: 0.6rem;
     width: 1rem;
     font-weight: 900;
@@ -86,10 +81,52 @@
     border: 0.1rem solid grey;
 }
 
-.navigation .row button:hover {
+.navigation button:hover {
     background-color: grey;
 }
 
 .active {
     background-color: rgb(0, 120, 233);
+}
+
+.choice-line {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    cursor: pointer;
+}
+
+.choice-radio-btn {
+    margin-right: 2rem;
+    transform: scale(1.2);
+    margin-right: 1rem;
+}
+
+.selected-choice {
+    border: .1rem solid rgb(0, 120, 233);
+}
+
+
+/* for showing the results */
+
+.exam-finished-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exam-finished-content .score-title {
+    font-weight: 700;
+}
+
+.exam-finished-content .score {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.exam-finished-content .distinction {
+    font-weight: 700;
+    font-size: 600;
+    color: rgb(35, 202, 35);
 }

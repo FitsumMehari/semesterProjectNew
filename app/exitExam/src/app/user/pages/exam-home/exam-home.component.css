@@ -38,3 +38,7 @@
 .exam-btn:hover {
     background-color: #325cd1;
 }
+
+.active {
+    background-color: grey;
+}

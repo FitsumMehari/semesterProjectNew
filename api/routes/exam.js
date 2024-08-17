@@ -17,7 +17,7 @@ router.get("/:fieldofstudy", verifyToken, async(req, res, next) => {
 
     if (matches) {
         try {
-            const exams = await Exam.find();
+            const exams = await Exam.findById(fieldofstudy);
             res.status(200).json(exams);
         } catch (error) {
             next(error);

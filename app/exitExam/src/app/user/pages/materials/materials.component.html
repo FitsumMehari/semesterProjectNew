@@ -5,23 +5,16 @@
         </div>
         <div class="mateials-list">
             <div class="header">
-                <p>Electrical and Computer Engineering Books</p>
+                <p>{{fieldofstudy}} Books</p>
                 <p>Download File</p>
             </div>
             <div class="body">
                 <div>
-                    <li>
-                        <p class="material-title">#1. Fundamentals of circuit</p>
-                        <button><i class="bi bi-download"></i></button>
+                    <li *ngFor="let material of materials; let i = index;">
+                        <p class="material-title">#{{i + 1}}. {{material.title}}</p>
+                        <button (click)="downloadMaterial(material.materialURL)"><i class="bi bi-download"></i></button>
                     </li>
-                    <li>
-                        <p class="material-title">#2. Signals and systems analysis</p>
-                        <button><i class="bi bi-download"></i></button>
-                    </li>
-                    <li>
-                        <p class="material-title">#3. Digital logic design</p>
-                        <button><i class="bi bi-download"></i></button>
-                    </li>
+
                 </div>
             </div>
         </div>

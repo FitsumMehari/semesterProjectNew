@@ -6,7 +6,7 @@ const md5 = require("md5");
 const fs = require("fs");
 
 // const jwtPrivateKey = fs.readFileSync('./rsa.pem', 'utf8');
-const jwtPrivateKey = process.env.JWTKEY
+const jwtPrivateKey = process.env.JWTKEY;
 
 dotenv.config();
 
@@ -52,7 +52,7 @@ router.post("/login", async(req, res, next) => {
 
             // !user && res.status(401).json("Wrong Credientials!");
             if (!user) {
-                return res.status(401).json("Wrong Credientials!");
+                return res.status(401).json({ message: "Wrong Credientials!" });
             }
 
             const hashedPassword = md5(req.body.password);
@@ -60,7 +60,7 @@ router.post("/login", async(req, res, next) => {
 
             // userPassword !== req.body.password && res.status(401).json("Wrong Credientials!");
             if (userPassword !== hashedPassword) {
-                return res.status(401).json("Wrong Credientials!");
+                return res.status(401).json({ message: "Wrong Credientials!" });
             }
 
             const accessToken = jwt.sign({
@@ -70,7 +70,7 @@ router.post("/login", async(req, res, next) => {
                     username: user.username,
                     userType: user.userType,
                     fieldofstudy: user.fieldofstudy,
-                    isLoggedIn: true
+                    isLoggedIn: true,
                 },
                 jwtPrivateKey, {
                     expiresIn: "7d",
@@ -81,27 +81,55 @@ router.post("/login", async(req, res, next) => {
 
             res
                 .status(200)
-                .json({ message: "Log In Successful!", userDetails, accessToken });
+                .json({ message: "Log In Successful!", accessToken });
         } catch (err) {
             return next(err);
         }
     }
 });
 
-// Verify Token
-router.get("/verifylogin", verifyToken, (req, res, next) => {
-    res.status(200).json({ message: "Login verified!" });
-});
+// Update
+router.put("/update", verifyToken, async(req, res, next) => {
+    // console.log('here on updateeee');
 
-// Get User Details
-router.get("/profile", verifyToken, async(req, res, next) => {
     try {
-        const user = await User.findById(req.user.id);
-        const { password, ...others } = user._doc;
-        // console.log(user._doc);
-        return res.status(200).json(others);
+        const user = await User.findByIdAndUpdate(req.body.id, req.body);
+
+        const accessToken = jwt.sign({
+                id: user._id,
+                isAdmin: user.userType === "admin",
+                email: user.email,
+                username: user.username,
+                userType: user.userType,
+                fieldofstudy: user.fieldofstudy,
+                isLoggedIn: true,
+            },
+            jwtPrivateKey, {
+                expiresIn: "7d",
+            }
+        );
+        res
+            .status(201)
+            .json({ message: "Update Successful!", accessToken });
     } catch (error) {
-        return next(error);
+        next(error);
     }
 });
+
+// Verify Token
+// router.get("/verifylogin", verifyToken, (req, res, next) => {
+//     res.status(200).json({ message: "Login verified!" });
+// });
+
+// Get User Details
+// router.get("/profile", verifyToken, async(req, res, next) => {
+//     try {
+//         const user = await User.findById(req.user.id);
+//         const { password, ...others } = user._doc;
+//         // console.log(user._doc);
+//         return res.status(200).json(others);
+//     } catch (error) {
+//         return next(error);
+//     }
+// });
 module.exports = router;

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../../User.interface';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,11 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './sign-in.component.css',
 })
 export class SignInComponent {
+  constructor(private auth: AuthService) {}
 
-  email:string = '';
-  password:string = '';
+  user: User = {};
 
-// For the toggle password eye button
+  // For the toggle password eye button
   togglePassword(elementId: string) {
     var element = document.getElementById(elementId);
     if (element?.getAttribute('type') == 'password') {
@@ -20,9 +22,8 @@ export class SignInComponent {
     }
   }
 
-  // Login Method
-  login(formValues:any) {
-console.log(formValues);
-
+  // Login
+  login() {
+    this.auth.login(this.user);
   }
 }

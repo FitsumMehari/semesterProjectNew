@@ -1,154 +1,105 @@
 <div class="page">
-    <p class="exam-title">Electrical and Computer Engineering Exam 2024</p>
-    <div class="content">
+    <p class="exam-title">{{exam.fieldofstudy}} {{exam.examTitle}}</p>
+    <div *ngIf="!examCompleted" class="content">
         <div class="index">
-            <p class="index-title">Question 1</p>
-            <p class="index-time"><i class="bi bi-clock"></i>02:55:59 left</p>
+            <p class="index-title">Question {{ currentQuestionIndex + 1 }}</p>
+            <p class="index-time">
+                <i class="bi bi-clock"></i> {{ timeLeft | date : "h:mm:ss" }} left
+            </p>
         </div>
+
+        <!-- show exam  -->
         <div>
-            <div class="exam">
+            <div class="exam" *ngIf="currentQuestion && !!totalQuestions">
                 <div class="question-title">
                     <u>Instruction</u>: Choose the best answer. You have been provided with 3 hours.
                 </div>
 
                 <div class="question">
-                    <b>What is Resistance?</b>
+                    <b>{{ currentQuestion.question }}</b>
                 </div>
-                <div class="choices">
-                    <p class="choice">A. choice one</p>
-                    <p class="choice">B. choice one</p>
-                    <p class="choice">C. choice one</p>
-                    <p class="choice">D. choice one</p>
+                <div class="choices" *ngFor="let choice of currentQuestion.choices | keyvalue">
+                    <div class="choice-line" id="{{ currentQuestion._id + choice.key }}" (click)="
+              answer(
+                currentQuestion._id + choice.key,
+                choice.key,
+                currentQuestionIndex
+              )
+            ">
+                        <!-- <input class="form-check-input choice-radio-btn" type="radio" name="choice"> -->
+                        <i class="bi bi-circle-fill choice-radio-btn"></i>
+                        <p class="choice">{{ choice.key }}. {{ choice.value }}</p>
+                    </div>
                 </div>
             </div>
-            <div class="buttons">
-                <button class="btn btn-seconday">Previous</button>
-                <button class="btn btn-primary">Next</button>
+            <div *ngIf="currentQuestion && !!totalQuestions" class="buttons">
+                <button *ngIf="
+            currentQuestionIndex > 0 &&
+            currentQuestionIndex < totalQuestions.length
+          " (click)="
+            setQuestionIndex(currentQuestionIndex - 1); resetChoiceLineStyles()
+          " class="btn btn-seconday">
+          Previous
+        </button>
+                <button *ngIf="
+            currentQuestionIndex != totalQuestions.length &&
+            currentQuestionIndex < totalQuestions.length - 1 &&
+            !!answers[currentQuestionIndex]
+          " (click)="
+            setQuestionIndex(currentQuestionIndex + 1); resetChoiceLineStyles()
+          " class="btn btn-primary">
+          Next
+        </button>
+                <button *ngIf="(currentQuestionIndex == totalQuestions.length - 1) &&
+            !!answers[currentQuestionIndex]" (click)="validateAnswers(); resetChoiceLineStyles()" class="btn btn-primary">
+          Finish
+        </button>
             </div>
         </div>
+
         <div>
             <div class="navigation">
-                <div class="row">
-                    <button class="btn btn-link">1</button
-          ><button class="btn btn-link">2</button
-          ><button class="btn btn-link">3</button
-          ><button class="btn btn-link">4</button
-          ><button class="btn btn-link">5</button
-          ><button class="btn btn-link">6</button>
-                    <button class="btn btn-link">7</button
-          ><button class="btn btn-link">8</button
-          ><button class="btn btn-link">9</button
-          ><button class="btn btn-link">10</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">11</button
-        ><button class="btn btn-link">12</button
-        ><button class="btn btn-link">13</button
-        ><button class="btn btn-link">14</button
-        ><button class="btn btn-link">15</button
-        ><button class="btn btn-link">16</button>
-                    <button class="btn btn-link">17</button
-        ><button class="btn btn-link">18</button
-        ><button class="btn btn-link">19</button
-        ><button class="btn btn-link">20</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">21</button
-      ><button class="btn btn-link">22</button
-      ><button class="btn btn-link">23</button
-      ><button class="btn btn-link">24</button
-      ><button class="btn btn-link">25</button
-      ><button class="btn btn-link">26</button>
-                    <button class="btn btn-link">27</button
-      ><button class="btn btn-link">28</button
-      ><button class="btn btn-link">29</button
-      ><button class="btn btn-link">30</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">33</button
-      ><button class="btn btn-link">32</button
-      ><button class="btn btn-link">33</button
-      ><button class="btn btn-link">34</button
-      ><button class="btn btn-link">35</button
-      ><button class="btn btn-link">36</button>
-                    <button class="btn btn-link">37</button
-      ><button class="btn btn-link">38</button
-      ><button class="btn btn-link">39</button
-      ><button class="btn btn-link">40</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">44</button
-      ><button class="btn btn-link">42</button
-      ><button class="btn btn-link">43</button
-      ><button class="btn btn-link">44</button
-      ><button class="btn btn-link">45</button
-      ><button class="btn btn-link">46</button>
-                    <button class="btn btn-link">47</button
-      ><button class="btn btn-link">48</button
-      ><button class="btn btn-link">49</button
-      ><button class="btn btn-link">50</button>
-                </div>
-                <div class="row">
-                    <button class="active btn btn-link">51</button
-        ><button class="btn btn-link">52</button
-        ><button class="btn btn-link">53</button
-        ><button class="btn btn-link">54</button
-        ><button class="btn btn-link">55</button
-        ><button class="btn btn-link">56</button>
-                    <button class="btn btn-link">57</button
-        ><button class="btn btn-link">58</button
-        ><button class="btn btn-link">59</button
-        ><button class="btn btn-link">60</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">66</button
-      ><button class="btn btn-link">62</button
-      ><button class="btn btn-link">63</button
-      ><button class="btn btn-link">64</button
-      ><button class="btn btn-link">65</button
-      ><button class="btn btn-link">66</button>
-                    <button class="btn btn-link">67</button
-      ><button class="btn btn-link">68</button
-      ><button class="btn btn-link">69</button
-      ><button class="btn btn-link">70</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">71</button
-    ><button class="btn btn-link">72</button
-    ><button class="btn btn-link">73</button
-    ><button class="btn btn-link">74</button
-    ><button class="btn btn-link">75</button
-    ><button class="btn btn-link">76</button>
-                    <button class="btn btn-link">77</button
-    ><button class="btn btn-link">78</button
-    ><button class="btn btn-link">79</button
-    ><button class="btn btn-link">80</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">8</button
-    ><button class="btn btn-link">82</button
-    ><button class="btn btn-link">83</button
-    ><button class="btn btn-link">84</button
-    ><button class="btn btn-link">85</button
-    ><button class="btn btn-link">86</button>
-                    <button class="btn btn-link">87</button
-    ><button class="btn btn-link">88</button
-    ><button class="btn btn-link">89</button
-    ><button class="btn btn-link">90</button>
-                </div>
-                <div class="row">
-                    <button class="btn btn-link">91</button
-    ><button class="btn btn-link">92</button
-    ><button class="btn btn-link">93</button
-    ><button class="btn btn-link">94</button
-    ><button class="btn btn-link">95</button
-    ><button class="btn btn-link">96</button>
-                    <button class="btn btn-link">97</button
-    ><button class="btn btn-link">98</button
-    ><button class="btn btn-link">99</button
-    ><button class="btn btn-link">100</button>
-                </div>
+                <button (click)="setQuestionIndex(i)" *ngFor="let question of totalQuestions; let i = index" class="btn btn-link question-index-btn" id="{{ i + 1 }}">
+          {{ i + 1 }}
+        </button>
             </div>
         </div>
+    </div>
+
+    <div *ngIf="examCompleted" class="exam-finished-content">
+        <p class="score-title">Exam Score</p>
+        <p class="score">{{ correctCount }} / {{ totalQuestions.length }}</p>
+        <p class="distinction" *ngIf="correctCount / totalQuestions.length >= 0.9">
+            Excellent
+        </p>
+        <p class="distinction" *ngIf="
+        correctCount / totalQuestions.length >= 0.8 &&
+        correctCount / totalQuestions.length < 0.9
+      ">
+            Very good
+        </p>
+        <p class="distinction" *ngIf="
+        correctCount / totalQuestions.length >= 0.7 &&
+        correctCount / totalQuestions.length < 0.8
+      ">
+            Good
+        </p>
+        <p class="distinction" *ngIf="
+        correctCount / totalQuestions.length >= 0.6 &&
+        correctCount / totalQuestions.length < 0.7
+      ">
+            Average
+        </p>
+        <p class="distinction" style="color: rgb(200, 255, 0);" *ngIf="
+        correctCount / totalQuestions.length >= 0.5 &&
+        correctCount / totalQuestions.length < 0.6
+      ">
+            Can be improved
+        </p>
+        <p class="distinction" style="color: red;" *ngIf="correctCount / totalQuestions.length < 0.5">
+            Fail
+        </p>
+
+        <button class="btn btn-information" (click)="exitPage()">Exit</button>
     </div>
 </div>

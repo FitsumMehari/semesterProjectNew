@@ -6,3 +6,22 @@ nav {
 .active {
     text-decoration: underline;
 }
+
+.profile-pic {
+    border-radius: 50%;
+    font-weight: 600;
+    padding: 0.2rem .6rem;
+    display: inline;
+    width: 2rem;
+    height: 2rem;
+    background-color: #0A215F;
+    color: #fff;
+    margin-right: .6rem;
+}
+
+
+/* .dropdown-menu {
+    position: absolute;
+    width: fit-content;
+    right: 0;
+} */

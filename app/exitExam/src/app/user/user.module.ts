@@ -17,7 +17,10 @@ import { QuestionComponent } from './pages/question/question.component';
 import { ResultComponent } from './pages/result/result.component';
 import { MessageComponent } from './pages/message/message.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FirstLetterPipe } from '../first-word.pipe';
+import { AuthGuardService } from '../services/auth-guard.service';
+
 
 const routes: Routes = [
   {
@@ -29,14 +32,14 @@ const routes: Routes = [
       { path: 'sign-up', component: SignUpComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
-      { path: 'materials', component: MaterialsComponent },
-      { path: 'exam', component: ExamHomeComponent },
-      { path: 'question', component: QuestionComponent },
-      { path: 'result', component: ResultComponent },
+      { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuardService] },
+      { path: 'exam', component: ExamHomeComponent, canActivate: [AuthGuardService] },
+      { path: 'question', component: QuestionComponent, canActivate: [AuthGuardService] },
+      { path: 'result', component: ResultComponent, canActivate: [AuthGuardService] },
       { path: 'otp-verification', component: OtpVerificationComponent },
       { path: 'home', component: HomeComponent },
       { path: 'create-new-password', component: CreateNewPasswordComponent },
-      { path: 'update-profile', component: UpdateProfileComponent },
+      { path: 'update-profile', component: UpdateProfileComponent, canActivate: [AuthGuardService] },
       { path: 'reset-password', component: ResetPasswordComponent },
       { path: '**', redirectTo: 'home', pathMatch: 'full' },
     ],
@@ -61,8 +64,9 @@ const routes: Routes = [
     QuestionComponent,
     ResultComponent,
     MessageComponent,
+    FirstLetterPipe
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
   exports: [
     UserComponent,
     HomeComponent,
