@@ -18,6 +18,7 @@ app.use(express.json());
 
 const authRoute = require("./routes/auth");
 const examRoute = require("./routes/exam");
+const scoreRoute = require("./routes/score");
 const materialRoute = require("./routes/material");
 const adminUserRoute = require("./routes/admin-user");
 const adminMaterialRoute = require("./routes/admin-material");
@@ -42,6 +43,7 @@ mongoose
 // Auth route path
 app.use("/auth", authRoute);
 app.use("/exam", examRoute);
+app.use("/score", scoreRoute);
 app.use("/material", materialRoute);
 app.use("/admin-user", adminUserRoute);
 app.use("/admin-material", adminMaterialRoute);
