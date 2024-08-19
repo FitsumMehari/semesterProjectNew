@@ -22,6 +22,8 @@ const scoreRoute = require("./routes/score");
 const materialRoute = require("./routes/material");
 const adminUserRoute = require("./routes/admin-user");
 const adminMaterialRoute = require("./routes/admin-material");
+const adminScoreRoute = require("./routes/admin-result");
+const adminExamRoute = require("./routes/admin-exam");
 
 // Database connector code
 mongoose
@@ -47,6 +49,8 @@ app.use("/score", scoreRoute);
 app.use("/material", materialRoute);
 app.use("/admin-user", adminUserRoute);
 app.use("/admin-material", adminMaterialRoute);
+app.use("/admin-score", adminScoreRoute);
+app.use("/admin-exam", adminExamRoute);
 
 //ROUTE NOT FOUND
 app.use((req, res, next) => {
