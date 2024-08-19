@@ -20,8 +20,6 @@ export class MaterialsComponent {
 
   material: Material = {};
 
-  buttonStatus = 'Add Material';
-
   ngOnInit(): void {
     this.refreshMaterialsList();
   }
