@@ -1,0 +1,47 @@
+<div class="page">
+    <div *ngIf="!!exam">
+        <div class="form card" style="border-radius: 15px">
+            <div class="card-body">
+                <h2 class="text-uppercase fs-4 text-center mb-3 form-title">Add Question</h2>
+
+                <form #deleteQuestionForm="ngForm" (ngSubmit)="add()">
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Question</label>
+                        <input type="text" [(ngModel)]="question.question" name="question" id="question" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Choice A</label>
+                        <input type="text" [(ngModel)]="question.choices.a" name="choiceA" id="choiceA" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Chocie B</label>
+                        <input type="text" [(ngModel)]="question.choices.b" name="choiceB" id="choiceB" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Chocie C</label>
+                        <input type="text" [(ngModel)]="question.choices.c" name="choiceC" id="choiceC" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Choice D</label>
+                        <input type="text" [(ngModel)]="question.choices.d" name="choiceD" id="title" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Correct choice</label>
+                        <input type="text" [(ngModel)]="question.answer" name="answer" id="answer" class="form-control" />
+                    </div>
+
+
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
