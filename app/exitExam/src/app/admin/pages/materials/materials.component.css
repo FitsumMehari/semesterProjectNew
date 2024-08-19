@@ -39,3 +39,11 @@ select {
 .icon-delete {
     color: red;
 }
+
+button {
+    background-color: #0A215F;
+}
+
+button:hover {
+    background-color: rgb(67, 67, 250);
+}

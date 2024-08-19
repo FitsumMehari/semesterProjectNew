@@ -1,0 +1,56 @@
+<div class="page">
+    <div>
+        <div class="form card" style="border-radius: 15px">
+            <div class="card-body">
+                <h2 class="text-uppercase fs-4 text-center mb-3 form-title">Update User</h2>
+
+                <form *ngIf="!!user" #addUserForm="ngForm" (ngSubmit)="update()">
+                    <div class="form-outline mb-2">
+                        <label class=" " for="userType">User type</label>
+                        <select [(ngModel)]="user.userType" name="userType" id="userType" class="form-control form-select">
+        <option
+          class="form-control"
+          value="student"
+        >
+          Student
+        </option>
+        <option class="form-control" value="admin">
+         Admin
+        </option>
+      </select>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="field-of-study">Field of Study</label>
+                        <select [(ngModel)]="user.fieldofstudy" name="fieldofstudy" id="field-of-study" class="form-control form-select">
+      <option
+        class="form-control"
+        value="Electrical and Computer Engineering"
+      >
+        Elecrical and Computer Engineering
+      </option>
+      <option class="form-control" value="Civil Engineering">
+        Civil Engineering
+      </option>
+    </select>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Username</label>
+                        <input type="text" [(ngModel)]="user.username" name="username" id="username" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="materialURL">Email</label>
+                        <input type="email" [(ngModel)]="user.email" name="email" id="email" class="form-control" />
+                    </div>
+
+
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

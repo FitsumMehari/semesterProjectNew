@@ -12,7 +12,12 @@ import { AdminGuardService } from '../services/admin-guard.service';
 import { ExamsComponent } from './pages/exams/exams.component';
 import { FilterPipe } from '../filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { EditMaterialComponent } from './pages/edit-material/edit-material.component';
+import { DeleteMaterialComponent } from './pages/delete-material/delete-material.component';
+import { AddMaterialComponent } from './pages/add-material/add-material.component';
+import { AddUserComponent } from './pages/add-user/add-user.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
+import { DeleteUserComponent } from './pages/delete-user/delete-user.component';
 
 const routes: Routes = [
   {
@@ -34,6 +39,18 @@ const routes: Routes = [
         component: MaterialsComponent,
       },
       {
+        path: 'edit-material/:materialId',
+        component: EditMaterialComponent,
+      },
+      {
+        path: 'delete-material/:materialId',
+        component: DeleteMaterialComponent,
+      },
+      {
+        path: 'add-material',
+        component: AddMaterialComponent,
+      },
+      {
         path: 'overview',
         component: OverviewComponent,
       },
@@ -41,6 +58,19 @@ const routes: Routes = [
         path: 'users',
         component: UsersComponent,
       },
+      {
+        path: 'update-user/:userId',
+        component: EditUserComponent,
+      },
+      {
+        path: 'delete-user/:userId',
+        component: DeleteUserComponent,
+      },
+      {
+        path: 'add-user',
+        component: AddUserComponent,
+      },
+
       {
         path: '',
         redirectTo: 'overview',
@@ -74,9 +104,20 @@ const routes: Routes = [
     SidebarComponent, // refactored
     UsersComponent, // refactored
     SignInComponent, //refactored
-    FilterPipe, //refactored
+    FilterPipe,
+    EditMaterialComponent,
+    DeleteMaterialComponent,
+    AddMaterialComponent,
+    AddUserComponent,
+    EditUserComponent,
+    DeleteUserComponent, //refactored
   ],
-  imports: [CommonModule,  RouterModule.forChild(routes),FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     HomeComponent,
     ExamsComponent,
@@ -86,6 +127,6 @@ const routes: Routes = [
     SidebarComponent,
     UsersComponent,
     SignInComponent,
-  ]
+  ],
 })
 export class AdminModule {}

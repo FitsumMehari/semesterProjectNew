@@ -31,7 +31,7 @@ router.get("/:id", verifyToken, async(req, res, next) => {
 router.put("/", verifyToken, async(req, res, next) => {
     try {
         const material = await Material.findByIdAndUpdate(req.body._id, req.body);
-        res.status(200).json(material);
+        res.status(200).json({ message: "Update Successful!", material });
     } catch (error) {
         next(error);
     }
@@ -43,7 +43,7 @@ router.post("/", verifyToken, async(req, res, next) => {
         const newMaterial = new Material(req.body);
 
         const savedMaterial = await newMaterial.save();
-        res.status(201).json(savedMaterial);
+        res.status(201).json({ message: "Add Successful!", savedMaterial });
     } catch (error) {
         next(error);
     }
@@ -54,7 +54,7 @@ router.delete("/:id", verifyToken, async(req, res, next) => {
     _id = req.params.id.split(":")[1];
     try {
         await Material.findByIdAndDelete(_id);
-        res.status(200).json({ message: "deleted" });
+        res.status(200).json({ message: "Delete Successful!" });
     } catch (error) {
         next(error);
     }

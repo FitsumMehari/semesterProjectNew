@@ -1,0 +1,68 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+input,
+label {
+    color: #555454;
+}
+
+input,
+select,
+option,
+button {
+    font-size: 0.8rem;
+    width: 20rem;
+}
+
+button {
+    background-color: #0A215F;
+}
+
+button:hover {
+    background-color: rgb(67, 67, 250);
+}
+
+.form-title {
+    color: #0A215F;
+    font-weight: 700;
+}
+
+.login-link u {
+    color: #0A215F;
+}
+
+.login-link u:hover {
+    color: rgb(67, 67, 250);
+}
+
+.password-field {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 1rem;
+    top: 46%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

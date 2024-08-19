@@ -6,7 +6,6 @@ const User = require("../models/User");
 
 // Get Users
 router.get("/:id", verifyToken, async(req, res, next) => {
-
     let id = req.params.id.split(":")[1];
     // let matches = id.match(/\d+/g);
     if (id != "all") {
@@ -31,7 +30,7 @@ router.get("/:id", verifyToken, async(req, res, next) => {
 router.put("/", verifyToken, async(req, res, next) => {
     try {
         const user = await User.findByIdAndUpdate(req.body._id, req.body);
-        res.status(200).json(user);
+        res.status(200).json({ message: "Update Successful!", user });
     } catch (error) {
         next(error);
     }
@@ -44,7 +43,7 @@ router.post("/", verifyToken, async(req, res, next) => {
         const newUser = new User(req.body);
 
         const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
+        res.status(201).json({ message: "Update Successful!", savedUser });
     } catch (error) {
         next(error);
     }
@@ -55,7 +54,7 @@ router.delete("/:id", verifyToken, async(req, res, next) => {
     _id = req.params.id.split(":")[1];
     try {
         await User.findByIdAndDelete(_id);
-        res.status(200).json({ message: "deleted" });
+        res.status(200).json({ message: "Delete Successful!" });
     } catch (error) {
         next(error);
     }

@@ -37,7 +37,7 @@
                     <td *ngIf="user.userType =='student'">{{user.userType}}</td>
                     <td *ngIf="user.userType =='admin'" style="color: rgb(255, 0, 0);">{{user.userType}}</td>
                     <td>
-                        <i (click)="selectUser(user._id) " class="icon icon-edit bi bi-pencil "></i>
+                        <i (click)="updateUser(user._id) " class="icon icon-edit bi bi-pencil "></i>
                         <i (click)="deleteUser(user._id) " class="icon icon-delete bi bi-trash "></i>
                     </td>
                 </tr>
@@ -46,49 +46,6 @@
         </table>
     </div>
     <div class="add-user ">
-        <form #addUserForm="ngForm" (ngSubmit)="addUser() ">
-            <div class="row ">
-                <div class="col mb-1 ">
-                    <label class="form-label " for="username ">Email</label>
-                    <input type="email " id="email " class="form-control " name="email " [(ngModel)]="newUser.email " />
-                </div>
-                <div *ngIf="buttonStatus=='Add User' " class="col mb-1 ">
-                    <label class="form-label " for="username ">Password</label>
-                    <input type="password " id="password " class="form-control " name="password " [(ngModel)]=" newUser.password " />
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col mb-1 ">
-                    <label class="form-label " for="username ">Username</label>
-                    <input type="text " id="username " class="form-control " name="username " [(ngModel)]="newUser.username " />
-                </div>
-                <div class="col select ">
-                    <label class="form-label " for="fieldofstudy ">Field of study</label>
-                    <select class="form-select " id="fieldofstudy " aria-label="Default select example " name="fieldofstudy " [(ngModel)]="newUser.fieldofstudy ">
-              <option value="Electrical and Computer Engineering">
-                Electrical and Computer Engienering
-              </option>
-              <option value="Civil Engineering">Civil Engineering</option>
-              <option value="Mechanical Engineering">Mechanical Engineering</option>
-            </select>
-                </div>
-                <div class="col select ">
-                    <label class="form-label " for="userType ">User Type</label>
-                    <select class="form-select " id="userType " aria-label="Default select example " name="userType " [(ngModel)]="newUser.userType ">
-            <option value="student">
-              Student
-            </option>
-            <option value="admin">Admin</option>
-          </select>
-                </div>
-            </div>
-
-
-
-            <button type="submit " class="btn btn-primary btn-block mb-4 ">
-  {{buttonStatus}}
-  </button>
-
-        </form>
+        <button class="btn btn-primary" [routerLink]="['/admin/home/add-user']">Add User</button>
     </div>
 </div>

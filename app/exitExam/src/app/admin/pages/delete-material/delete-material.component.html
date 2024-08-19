@@ -1,0 +1,42 @@
+<div class="page">
+    <div>
+        <div class="form card" style="border-radius: 15px">
+            <div class="card-body">
+                <h2 class="text-uppercase fs-4 text-center mb-3 form-title">
+                    Delete Material
+                </h2>
+
+                <form *ngIf="!!material" #deleteMaterialForm="ngForm" (ngSubmit)="delete()">
+                    <div class="form-outline mb-2">
+                        <label class=" " for="field-of-study">Field of Study</label>
+                        <select disabled [ngModel]="material.fieldofstudy" name="fieldofstudy" id="field-of-study" class="form-control form-select">
+              <option
+                class="form-control"
+                value="Electrical and Computer Engineering"
+              >
+                Elecrical and Computer Engineering
+              </option>
+              <option class="form-control" value="Civil Engineering">
+                Civil Engineering
+              </option>
+            </select>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="title">Title</label>
+                        <input disabled type="text" [ngModel]="material.title" name="title" id="title" class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class="" for="materialURL">Download link</label>
+                        <input disabled type="text" [ngModel]="material.materialURL" name="materialURL" id="materialURL" class="form-control" />
+                    </div>
+
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

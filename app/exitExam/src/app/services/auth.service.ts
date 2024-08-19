@@ -151,6 +151,6 @@ export class AuthService implements OnInit {
   logoutAdmin() {
     localStorage.removeItem('token');
     this.setUser();
-    this.router.navigate(['/admin/home']);
+    this.router.navigate(['/admin/sign-in']);
   }
 }

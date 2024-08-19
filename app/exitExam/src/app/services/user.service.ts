@@ -2,19 +2,24 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   _users: BehaviorSubject<any> = new BehaviorSubject([]);
+  _user: BehaviorSubject<any> = new BehaviorSubject({});
   message!: string;
   response: any;
 
-  setUsers(materials: any) {
-    this._users.next(materials);
+  setUsers(users: any) {
+    this._users.next(users);
+  }
+  setUser(user: any) {
+    this._user.next(user);
   }
 
   getAllUsers() {
@@ -36,7 +41,7 @@ export class UserService {
   }
 
   getSingleUser(userId: any) {
-    const url = environment.apiURL + 'admin-user/' + userId;
+    const url = environment.apiURL + 'admin-user/:' + userId;
 
     // const url = `http://localhost:3000/material/:${userId}`;
     const httpOptions = {
@@ -45,7 +50,11 @@ export class UserService {
       }),
     };
 
-    return this.http.get(url, httpOptions);
+    return this.http.get(url, httpOptions).subscribe((next) => {
+
+
+      this.setUser(next);
+    });
   }
 
   addUser(user: any) {
@@ -55,10 +64,12 @@ export class UserService {
         token: `token ${localStorage.getItem('token')}`,
       }),
     };
-    return this.http.post(url, user, httpOptions).subscribe((next)=>{
-      this.response = next
-      alert(this.response.message)
-    })
+    return this.http.post(url, user, httpOptions).subscribe((next) => {
+      this.response = next;
+      alert(this.response.message);
+      this.router.navigate(['/admin/home/users']);
+
+    });
   }
 
   deleteUser(userId: any) {
@@ -68,10 +79,12 @@ export class UserService {
         token: `token ${localStorage.getItem('token')}`,
       }),
     };
-    return this.http.delete(url, httpOptions).subscribe((next)=>{
-      this.response = next
-      alert(this.response.message)
-    })
+    return this.http.delete(url, httpOptions).subscribe((next) => {
+      this.response = next;
+      alert(this.response.message);
+      this.router.navigate(['/admin/home/users']);
+
+    });
   }
 
   updateUser(user: any) {
@@ -81,9 +94,11 @@ export class UserService {
         token: `token ${localStorage.getItem('token')}`,
       }),
     };
-    return this.http.put(url, user, httpOptions).subscribe((next)=>{
-      this.response = next
-      alert(this.response.message)
-    })
+    return this.http.put(url, user, httpOptions).subscribe((next) => {
+      this.response = next;
+      alert(this.response.message);
+      this.router.navigate(['/admin/home/users']);
+
+    });
   }
 }

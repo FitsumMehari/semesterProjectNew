@@ -35,44 +35,16 @@ z-index: 100;
                     <!-- <td *ngIf="material.materialType =='student'">{{material.materialType}}</td>
                     <td *ngIf="material.materialType =='admin'" style="color: rgb(255, 0, 0);">{{material.materialType}}</td> -->
                     <td>
-                        <i (click)="selectMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
+                        <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
                         <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
                     </td>
                 </tr>
 
             </tbody>
         </table>
+
+
     </div>
-    <div class="add-material ">
-        <form #addMaterialForm="ngForm" (ngSubmit)="addMaterial() ">
-            <div class="row ">
-                <div class="col mb-1 ">
-                    <label class="form-label " for="materialTitle">Title</label>
-                    <input type="text" id="materialTitle" class="form-control " name="materialTitle" [(ngModel)]="newMaterial.title " />
-                </div>
-
-
-                <div class="col mb-1 ">
-                    <label class="form-label " for="materialURL">material URL</label>
-                    <input type="text " id="materialURL" class="form-control " name="materialURL" [(ngModel)]="newMaterial.materialURL " />
-                </div>
-
-                <div class="col select ">
-                    <label class="form-label " for="fieldofstudy">Field of study</label>
-                    <select class="form-select " id="fieldofstudy" aria-label="Default select example " name="fieldofstudy" [(ngModel)]="newMaterial.fieldofstudy ">
-          <option value="Electrical and Computer Engineering">Electrical and Computer Engineering</option>
-          <option value="Civil Engineering">Civil Engineering</option>
-          <option value="Mechanical Engineering">Mechanical Engineering</option>
-        </select>
-                </div>
-            </div>
-
-
-
-            <button type="submit " class="btn btn-primary btn-block mt-2 mb-4 ">
-{{buttonStatus}}
-</button>
-
-        </form>
+    <div class="add-material">
+        <button class="btn btn-primary" [routerLink]="['/admin/home/add-material']">Add Material</button>
     </div>
-</div>

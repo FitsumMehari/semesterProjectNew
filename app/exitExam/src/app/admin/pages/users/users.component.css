@@ -22,7 +22,7 @@ select {
 
 .table {
     margin-top: 1rem;
-    max-height: 8rem;
+    max-height: 16rem;
     overflow: scroll;
     scrollbar-width: none;
 }
@@ -38,4 +38,12 @@ select {
 
 .icon-delete {
     color: red;
+}
+
+button {
+    background-color: #0A215F;
+}
+
+button:hover {
+    background-color: rgb(67, 67, 250);
 }

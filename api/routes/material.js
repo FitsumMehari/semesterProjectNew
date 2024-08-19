@@ -40,7 +40,7 @@ router.put("/", verifyToken, async(req, res, next) => {
 });
 
 // Add Material
-router.post("/:userId", verifyToken, async(req, res, next) => {
+router.post("/", verifyToken, async(req, res, next) => {
     try {
         const newMaterial = new Material({
             fieldofstudy: req.body.fieldofstudy,

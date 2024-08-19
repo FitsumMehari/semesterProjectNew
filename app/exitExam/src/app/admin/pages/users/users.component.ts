@@ -5,6 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import { ManagetokenService } from '../../../services/managetoken.service';
 import { User } from '../../../user/User.interface';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -12,7 +13,11 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit {
-  constructor(private userService: UserService, private auth: AuthService) {}
+  constructor(
+    private userService: UserService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   filterInput: any;
 
@@ -51,74 +56,11 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  addUser() {
-    if (this.buttonStatus == 'Add User') {
-      this.newUser.isAdmin = this.newUser.userType == 'admin' ? true : false;
-      this.userService.addUser(this.newUser);
-      this.newUser = {
-        isAdmin: false,
-        email: '',
-        username: '',
-        userType: '',
-        fieldofstudy: '',
-        password: '',
-      };
-      this.refreshUsersList();
-    } else if (this.buttonStatus == 'Update User') {
-      this.updateUser(this.selectedUserId);
-    }
-  }
-
   deleteUser(userId: any) {
-    this.users.forEach((user: any) => {
-      if (user._id == userId) {
-        let toDelete = confirm(
-          'Are you sure you want to delete ' + user.username + "'s account?"
-        );
-
-        if (toDelete) {
-          this.userService.deleteUser(userId);
-          // Refresh The List
-          this.refreshUsersList();
-        }
-      }
-    });
-  }
-
-  selectUser(userId: any) {
-    this.users.forEach((user: any) => {
-      if (user._id == userId) {
-        user.isAdmin = user.userType == 'admin' ? true : false;
-        this.selectedUserId = user._id;
-        this.newUser = user;
-
-        this.buttonStatus = 'Update User';
-        // console.log(this.newUser);
-      }
-    });
+    this.router.navigate(['/admin/home/delete-user', userId]);
   }
 
   updateUser(userId: any) {
-    this.users.forEach((user: any) => {
-      if (user._id == userId) {
-        let toUpdate = confirm(
-          'Are you sure you want to update ' + user.username + "'s account?"
-        );
-
-        if (toUpdate) {
-          let { password, ...otherUserDetails } = user;
-          this.userService.updateUser(otherUserDetails);
-          this.newUser = {
-            isAdmin: false,
-            email: '',
-            username: '',
-            userType: '',
-            fieldofstudy: '',
-            password: '',
-          };
-          this.refreshUsersList();
-        }
-      }
-    });
+    this.router.navigate(['/admin/home/update-user', userId]);
   }
 }
