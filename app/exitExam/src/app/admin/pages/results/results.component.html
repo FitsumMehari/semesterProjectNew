@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="header">
+        <p class="h3">Results</p>
+        <div class="mb-4 search-box" style="position: relative">
+            <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
+            <i class="fa-solid fa-filter" style="
+          cursor: pointer;
+          position: absolute;
+          top: 0.6rem;
+          right: 0.7rem;
+          z-index: 100;
+        "></i>
+
+            <label class="form-label" for="textInput">Filter</label>
+        </div>
+    </div>
+    <div class="table">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Exam Title</th>
+                    <th scope="col">Result</th>
+
+                    <!-- <th scope="col">Action</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of results | filter : filterInput; let i = index">
+                    <th scope=" row ">{{ i + 1 }}</th>
+                    <td>{{ result.username }}</td>
+                    <td>{{ result.examTitle }}</td>
+                    <td>{{ result.score }}</td>
+
+                    <!-- <td>
+                        <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
+                        <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
