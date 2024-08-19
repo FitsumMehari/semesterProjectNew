@@ -1,0 +1,52 @@
+<div>
+    <div *ngIf="!!exam" class="container">
+        <div class="header">
+            <p class="h3">Exam title: {{exam.examTitle}}</p>
+            <div class="mb-4 search-box" style="position: relative">
+                <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
+                <i class="fa-solid fa-filter" style="
+cursor: pointer;
+position: absolute;
+top: 0.6rem;
+right: 0.7rem;
+z-index: 100;
+"></i>
+
+                <label class="form-label" for="textInput">Filter</label>
+            </div>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Question</th>
+                        <th scope="col">choice A</th>
+                        <th scope="col">choice B</th>
+                        <th scope="col">choice C</th>
+                        <th scope="col">choice D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let question of exam.questions |filter:filterInput; let i = index">
+                        <th scope=" row ">{{i + 1}}</th>
+                        <td>{{question.question}}</td>
+                        <td>{{question.choices.a}}</td>
+                        <td>{{question.choices.b}}</td>
+                        <td>{{question.choices.c}}</td>
+                        <td>{{question.choices.d}}</td>
+                        <td>
+                            <i (click)="updateQuestion(exam.questions.indexOf(question)) " class="icon icon-edit bi bi-pencil "></i>
+                            <i (click)="deleteQuestion(exam.questions.indexOf(question)) " class="icon icon-delete bi bi-trash "></i>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="add-material">
+            <button class="btn btn-primary" (click)="addQuestion()">Add Question</button>
+        </div>
+    </div>
