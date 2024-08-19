@@ -18,6 +18,13 @@ import { AddMaterialComponent } from './pages/add-material/add-material.componen
 import { AddUserComponent } from './pages/add-user/add-user.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { DeleteUserComponent } from './pages/delete-user/delete-user.component';
+import { ResultsComponent } from './pages/results/results.component';
+import { SingleExamComponent } from './pages/single-exam/single-exam.component';
+import { DeleteExamComponent } from './pages/delete-exam/delete-exam.component';
+import { DeleteQuestionComponent } from './pages/delete-question/delete-question.component';
+import { EditQuestionComponent } from './pages/edit-question/edit-question.component';
+import { AddQuestionComponent } from './pages/add-question/add-question.component';
+import { AddExamComponent } from './pages/add-exam/add-exam.component';
 
 const routes: Routes = [
   {
@@ -33,6 +40,30 @@ const routes: Routes = [
       {
         path: 'exams',
         component: ExamsComponent,
+      },
+      {
+        path: 'add-exam',
+        component: AddExamComponent,
+      },
+      {
+        path: 'edit-exam/:examId',
+        component: SingleExamComponent,
+      },
+      {
+        path: 'delete-exam/:examId',
+        component: DeleteExamComponent,
+      },
+      {
+        path: 'edit-question/:examId/:questionId',
+        component: EditQuestionComponent,
+      },
+      {
+        path: 'add-question/:examId',
+        component: AddQuestionComponent,
+      },
+      {
+        path: 'delete-question/:examId/:questionId',
+        component: DeleteQuestionComponent,
       },
       {
         path: 'materials',
@@ -70,7 +101,10 @@ const routes: Routes = [
         path: 'add-user',
         component: AddUserComponent,
       },
-
+      {
+        path: 'results',
+        component: ResultsComponent,
+      },
       {
         path: '',
         redirectTo: 'overview',
@@ -110,7 +144,14 @@ const routes: Routes = [
     AddMaterialComponent,
     AddUserComponent,
     EditUserComponent,
-    DeleteUserComponent, //refactored
+    DeleteUserComponent,
+    ResultsComponent,
+    SingleExamComponent,
+    DeleteExamComponent,
+    DeleteQuestionComponent,
+    EditQuestionComponent,
+    AddQuestionComponent,
+    AddExamComponent, //refactored
   ],
   imports: [
     CommonModule,
@@ -127,6 +168,19 @@ const routes: Routes = [
     SidebarComponent,
     UsersComponent,
     SignInComponent,
+    EditMaterialComponent,
+    DeleteMaterialComponent,
+    AddMaterialComponent,
+    AddUserComponent,
+    EditUserComponent,
+    DeleteUserComponent,
+    ResultsComponent,
+    SingleExamComponent,
+    DeleteExamComponent,
+    DeleteQuestionComponent,
+    EditQuestionComponent,
+    AddQuestionComponent,
+    AddExamComponent
   ],
 })
 export class AdminModule {}
