@@ -1,0 +1,35 @@
+<div class="container-fluid p-0 d-flex h-100">
+    <div id="bdSidebar" class="side-bar d-flex flex-column flex-shrink-0 p-4 bg-success text-white offcanvas-md offcanvas-start">
+        <div style="width: 100%; text-wrap: wrap">
+            <p class="display-6">Graduate Gateway</p>
+        </div>
+
+        <hr />
+        <p style="font-size: 0.9rem">Manage</p>
+        <ul class="mynav nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" [routerLink]="['/admin/home/overview']" style="cursor: pointer">
+                    <i class="fa-regular fa-user"></i> Overview
+                </a>
+            </li>
+
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" [routerLink]="['/admin/home/users']" style="cursor: pointer">
+                    <i class="fa-regular fa-newspaper"></i> Users
+                </a>
+            </li>
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" [routerLink]="['/admin/home/materials']" style="cursor: pointer;">
+                    <i class="fa-solid fa-archway"></i> Materials
+                </a>
+            </li>
+            <li class="nav-item mb-1">
+                <a routerLinkActive="active" [routerLink]="['/admin/home/exams']" style="cursor: pointer;">
+                    <i class="fa-solid fa-graduation-cap"></i> Exams
+                </a>
+            </li>
+        </ul>
+        <hr />
+        <button class="btn btn-link " style="color: #afafaf;" (click)="logout()">Log Out</button>
+    </div>
+</div>

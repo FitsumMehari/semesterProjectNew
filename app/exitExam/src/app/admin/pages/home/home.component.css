@@ -1,0 +1,22 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    width: 18vw;
+}
+
+.navbar-and-router-outlet {
+    width: 82vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.nav-bar {
+    width: 100%;
+}

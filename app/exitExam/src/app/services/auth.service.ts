@@ -116,10 +116,41 @@ export class AuthService implements OnInit {
     );
   }
 
+  // Admin login
+  loginAdmin(user: User) {
+    const url = environment.apiURL + 'auth/loginAdmin';
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+
+    this.http.post(url, user, httpOptions).subscribe(
+      (next) => {
+        this.response = next;
+        this.message = this.response.message;
+        localStorage.setItem('token', this.response.accessToken);
+
+        this.setUser();
+
+        this.router.navigate(['/admin/home']);
+      },
+      (error) => {
+        alert("Wrong Credientials")
+      }
+    );
+  }
+
   // Logout
   logout() {
     localStorage.removeItem('token');
     this.setUser();
     this.router.navigate(['/user/home']);
+  }
+
+  // Admin Logout
+  logoutAdmin() {
+    localStorage.removeItem('token');
+    this.setUser();
+    this.router.navigate(['/admin/home']);
   }
 }

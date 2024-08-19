@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand logo " style="padding-left: 3rem; font-weight: 700;">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+
+            <a *ngIf="!user?.isLoggedIn" class="nav-item nav-link" routerLink="sign-in" routerLinkActive="active">Sign In</a>
+            <a *ngIf="user?.isLoggedIn" class=" nav-item nav-link " routerLink="profile" routerLinkActive="active ">{{user.username}}</a>
+            <i class="fa-regular fa-user nav-item nav-link mt-1"></i>
+        </div>
+    </div>
+</nav>

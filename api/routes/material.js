@@ -26,14 +26,14 @@ router.get("/:fieldofstudy", verifyToken, async(req, res, next) => {
 });
 
 // Edit Material
-router.put("/:userId", verifyToken, async(req, res, next) => {
+router.put("/", verifyToken, async(req, res, next) => {
     try {
         const material = await Material.findByIdAndUpdate(req.body._id, {
             fieldofstudy: req.body.fieldofstudy,
             materialURL: req.body.materialURL,
             title: req.body.title,
         });
-        res.status(200).json(material);
+        res.status(201).json({ message: "Update Successful!", material });
     } catch (error) {
         next(error);
     }
@@ -49,7 +49,7 @@ router.post("/:userId", verifyToken, async(req, res, next) => {
         });
 
         const savedMaterial = await newMaterial.save();
-        res.status(201).json(savedMaterial);
+        res.status(201).json({ message: "Add Successful!", savedMaterial });
     } catch (error) {
         next(error);
     }

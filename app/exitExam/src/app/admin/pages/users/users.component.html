@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="header">
+        <p class="h3">User Account</p>
+        <div class="mb-4 search-box" style="position: relative">
+            <input type="text" id="textInput" class="form-control" placeholder="Enter data to filter by" name="filterInput" [(ngModel)]="filterInput" />
+            <i class="fa-solid fa-filter" style="
+  cursor: pointer;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  z-index: 100;
+"></i>
+
+            <label class="form-label" for="textInput">Filter</label>
+        </div>
+    </div>
+    <div class="table">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Field</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | filter:filterInput; let i = index ">
+                    <th scope=" row ">{{i + 1}}</th>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user._id}}</td>
+                    <td>{{user.fieldofstudy || "none"}}</td>
+                    <td *ngIf="user.userType =='student'">{{user.userType}}</td>
+                    <td *ngIf="user.userType =='admin'" style="color: rgb(255, 0, 0);">{{user.userType}}</td>
+                    <td>
+                        <i (click)="selectUser(user._id) " class="icon icon-edit bi bi-pencil "></i>
+                        <i (click)="deleteUser(user._id) " class="icon icon-delete bi bi-trash "></i>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="add-user ">
+        <form #addUserForm="ngForm" (ngSubmit)="addUser() ">
+            <div class="row ">
+                <div class="col mb-1 ">
+                    <label class="form-label " for="username ">Email</label>
+                    <input type="email " id="email " class="form-control " name="email " [(ngModel)]="newUser.email " />
+                </div>
+                <div *ngIf="buttonStatus=='Add User' " class="col mb-1 ">
+                    <label class="form-label " for="username ">Password</label>
+                    <input type="password " id="password " class="form-control " name="password " [(ngModel)]=" newUser.password " />
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col mb-1 ">
+                    <label class="form-label " for="username ">Username</label>
+                    <input type="text " id="username " class="form-control " name="username " [(ngModel)]="newUser.username " />
+                </div>
+                <div class="col select ">
+                    <label class="form-label " for="fieldofstudy ">Field of study</label>
+                    <select class="form-select " id="fieldofstudy " aria-label="Default select example " name="fieldofstudy " [(ngModel)]="newUser.fieldofstudy ">
+              <option value="Electrical and Computer Engineering">
+                Electrical and Computer Engienering
+              </option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+            </select>
+                </div>
+                <div class="col select ">
+                    <label class="form-label " for="userType ">User Type</label>
+                    <select class="form-select " id="userType " aria-label="Default select example " name="userType " [(ngModel)]="newUser.userType ">
+            <option value="student">
+              Student
+            </option>
+            <option value="admin">Admin</option>
+          </select>
+                </div>
+            </div>
+
+
+
+            <button type="submit " class="btn btn-primary btn-block mb-4 ">
+  {{buttonStatus}}
+  </button>
+
+        </form>
+    </div>
+</div>

@@ -6,5 +6,6 @@ export interface User {
   email?: string;
   userType?: string;
   fieldofstudy?: string;
-  isLoggedIn?: string,
+  isLoggedIn?: boolean,
+  isAdmin?: boolean,
 }

@@ -88,6 +88,56 @@ router.post("/login", async(req, res, next) => {
     }
 });
 
+// Admin Login
+router.post("/loginAdmin", async(req, res, next) => {
+    if (!req.body.email || !req.body.password) {
+        res.status(400).json("Please fill the required inputs!");
+    } else {
+        try {
+            const user = await User.findOne({ email: req.body.email });
+
+            // !user && res.status(401).json("Wrong Credientials!");
+            if (!user) {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            }
+
+            if (user.userType != "admin") {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            }
+
+            const hashedPassword = md5(req.body.password);
+            const userPassword = user.password;
+
+            // userPassword !== req.body.password && res.status(401).json("Wrong Credientials!");
+            if (userPassword !== hashedPassword) {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            }
+
+            const accessToken = jwt.sign({
+                    id: user._id,
+                    isAdmin: user.userType === "admin",
+                    email: user.email,
+                    username: user.username,
+                    userType: user.userType,
+                    fieldofstudy: user.fieldofstudy,
+                    isLoggedIn: true,
+                },
+                jwtPrivateKey, {
+                    expiresIn: "7d",
+                }
+            );
+
+            const { password, ...userDetails } = user._doc;
+
+            res
+                .status(200)
+                .json({ message: "Log In Successful!", accessToken });
+        } catch (err) {
+            return next(err);
+        }
+    }
+});
+
 // Update
 router.put("/update", verifyToken, async(req, res, next) => {
     // console.log('here on updateeee');
@@ -116,20 +166,5 @@ router.put("/update", verifyToken, async(req, res, next) => {
     }
 });
 
-// Verify Token
-// router.get("/verifylogin", verifyToken, (req, res, next) => {
-//     res.status(200).json({ message: "Login verified!" });
-// });
 
-// Get User Details
-// router.get("/profile", verifyToken, async(req, res, next) => {
-//     try {
-//         const user = await User.findById(req.user.id);
-//         const { password, ...others } = user._doc;
-//         // console.log(user._doc);
-//         return res.status(200).json(others);
-//     } catch (error) {
-//         return next(error);
-//     }
-// });
 module.exports = router;

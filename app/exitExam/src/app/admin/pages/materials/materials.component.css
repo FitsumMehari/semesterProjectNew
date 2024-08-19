@@ -1,0 +1,41 @@
+.header {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+input,
+select {
+    width: 15rem;
+    font-size: 0.8rem;
+    background-color: #eaeaea;
+}
+
+.table {
+    margin-top: 1rem;
+    max-height: 15rem;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.icon {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.icon-edit {
+    color: blue;
+}
+
+.icon-delete {
+    color: red;
+}

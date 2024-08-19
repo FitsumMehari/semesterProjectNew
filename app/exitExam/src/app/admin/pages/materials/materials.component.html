@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="header">
+        <p class="h3">Materials</p>
+        <div class="mb-4 search-box" style="position: relative">
+            <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
+            <i class="fa-solid fa-filter" style="
+cursor: pointer;
+position: absolute;
+top: 0.6rem;
+right: 0.7rem;
+z-index: 100;
+"></i>
+
+            <label class="form-label" for="textInput">Filter</label>
+        </div>
+    </div>
+    <div class="table">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Field of study</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">URL</th>
+
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let material of materials |filter:filterInput; let i = index">
+                    <th scope=" row ">{{i + 1}}</th>
+                    <td>{{material.fieldofstudy}}</td>
+                    <td>{{material.title}}</td>
+                    <td>{{material.materialURL}}</td>
+                    <!-- <td *ngIf="material.materialType =='student'">{{material.materialType}}</td>
+                    <td *ngIf="material.materialType =='admin'" style="color: rgb(255, 0, 0);">{{material.materialType}}</td> -->
+                    <td>
+                        <i (click)="selectMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
+                        <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="add-material ">
+        <form #addMaterialForm="ngForm" (ngSubmit)="addMaterial() ">
+            <div class="row ">
+                <div class="col mb-1 ">
+                    <label class="form-label " for="materialTitle">Title</label>
+                    <input type="text" id="materialTitle" class="form-control " name="materialTitle" [(ngModel)]="newMaterial.title " />
+                </div>
+
+
+                <div class="col mb-1 ">
+                    <label class="form-label " for="materialURL">material URL</label>
+                    <input type="text " id="materialURL" class="form-control " name="materialURL" [(ngModel)]="newMaterial.materialURL " />
+                </div>
+
+                <div class="col select ">
+                    <label class="form-label " for="fieldofstudy">Field of study</label>
+                    <select class="form-select " id="fieldofstudy" aria-label="Default select example " name="fieldofstudy" [(ngModel)]="newMaterial.fieldofstudy ">
+          <option value="Electrical and Computer Engineering">Electrical and Computer Engineering</option>
+          <option value="Civil Engineering">Civil Engineering</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+        </select>
+                </div>
+            </div>
+
+
+
+            <button type="submit " class="btn btn-primary btn-block mt-2 mb-4 ">
+{{buttonStatus}}
+</button>
+
+        </form>
+    </div>
+</div>
