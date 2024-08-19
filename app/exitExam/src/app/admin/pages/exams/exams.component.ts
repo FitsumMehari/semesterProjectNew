@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Material } from '../../../user/Material.interface';
+import { ExamService } from '../../../services/exam.service';
 
 @Component({
   selector: 'app-exams',
@@ -6,5 +9,31 @@ import { Component } from '@angular/core';
   styleUrl: './exams.component.css'
 })
 export class ExamsComponent {
+
+  constructor(private examService: ExamService, private router: Router) {}
+
+  filterInput: any;
+  exams: any = [];
+
+  exam: any = {};
+
+  ngOnInit(): void {
+    this.refreshExamsList();
+  }
+  // Refresh The List
+  refreshExamsList() {
+    this.examService.getAllExams();
+    this.examService._exams.subscribe((next) => {
+      this.exams = next;
+    });
+  }
+
+  deleteExam(examId: any) {
+    this.router.navigate(['/admin/home/delete-exam/', examId]);
+  }
+
+  updateExam(examId: any) {
+    this.router.navigate(['/admin/home/edit-exam/', examId]);
+  }
 
 }
