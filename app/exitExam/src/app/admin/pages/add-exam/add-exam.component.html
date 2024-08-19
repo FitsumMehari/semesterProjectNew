@@ -1,0 +1,76 @@
+<div class="page">
+    <div *ngIf="!!exam">
+        <div class="form card" style="border-radius: 15px">
+            <div class="card-body">
+                <h2 class="text-uppercase fs-4 text-center mb-3 form-title">
+                    Add Exam
+                </h2>
+
+                <form #addExamForm="ngForm">
+                    <p>For the whole the exam</p>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="field-of-study ">Field of Study</label>
+                        <select [(ngModel)]="exam.fieldofstudy" name="fieldofstudy" id="field-of-study" class="form-control form-select">
+              <option
+                class="form-control"
+                value="Electrical and Computer Engineering"
+              >
+                Elecrical and Computer Engineering
+              </option>
+              <option class="form-control" value="Civil Engineering">
+                Civil Engineering
+              </option>
+            </select>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Exam Title</label>
+                        <input type="text" [(ngModel)]="exam.examTitle" name="exmaTitle" id="exmaTitle " class="form-control" />
+                    </div>
+
+                    <p>For the question</p>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Question</label>
+                        <input type="text " [(ngModel)]="question.question" name="question" id="question " class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Choice A</label>
+                        <input type="text " [(ngModel)]="question.choices.a" name="choiceA " id="choiceA " class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Chocie B</label>
+                        <input type="text " [(ngModel)]="question.choices.b" name="choiceB " id="choiceB " class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Chocie C</label>
+                        <input type="text" [(ngModel)]="question.choices.c" name="choiceC" id="choiceC " class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Choice D</label>
+                        <input type="text" [(ngModel)]="question.choices.d" name="choiceD" id="title " class="form-control" />
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <label class=" " for="title ">Correct choice</label>
+                        <input type="text" [(ngModel)]="question.answer" name="answer" id="answer " class="form-control" />
+                    </div>
+
+                    <div class="mt-2">
+                        <button type="button" (click)="addQuestion()" class="btn btn-secondary">
+              Insert Question
+            </button>
+                        <button type="button" (click)="addExam()" class="btn btn-primary">
+              Finish
+            </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
