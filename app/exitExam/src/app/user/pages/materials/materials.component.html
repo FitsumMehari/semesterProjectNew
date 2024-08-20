@@ -1,17 +1,20 @@
 <div class="page">
-    <div class="materials-card">
+    <div *ngIf="!materials" class="spinner-border text-primary materials-card" role="status">
+        <span class="sr-only"></span>
+    </div>
+
+    <div *ngIf="materials" class="materials-card">
         <div>
             <p class="title">Here are some Books related to your Field of Study.</p>
         </div>
+
         <div class="mateials-list">
             <div class="header">
                 <p>{{fieldofstudy}} Books</p>
                 <p>Download File</p>
             </div>
             <div class="body">
-                <div *ngIf="!materials" class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
+
                 <div>
                     <li *ngFor="let material of materials; let i = index;">
                         <p class="material-title">#{{i + 1}}. {{material.title}}</p>
