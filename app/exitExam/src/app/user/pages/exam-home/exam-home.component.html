@@ -1,9 +1,10 @@
 <div class="page">
+
     <div class="page-card">
         <p class="title">Please choose Year of Exam </p>
+        <div *ngIf="!exams" class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
         <button *ngFor="let exam of exams" (click)="chooseExam(exam._id)" id="{{exam._id}}" class="exam-select-btn testtt">{{exam.examTitle}}</button>
-
-
-        <!-- <button (click)="takeExam()" class="btn btn-primary exam-btn">Take Exam</button> -->
     </div>
 </div>
