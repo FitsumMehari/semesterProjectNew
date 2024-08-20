@@ -42,7 +42,7 @@
         >
         <a
           *ngIf="user?.isLoggedIn"
-          class="nav-link dropdown-toggle"
+          class="nav-link  profile-link"
           id="navbarDropdown"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
@@ -50,10 +50,10 @@
           routerLinkActive="active"
           style="cursor: pointer"
         >
-          <div class="profile-pic">
+          <p class="profile-pic">
             {{ user?.username | firstLetter | uppercase }}
-          </div>
-          {{ user?.username }}</a
+          </p>
+          <p class="dropdown-toggle">{{ user?.username | uppercase }}</p></a
         >
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
