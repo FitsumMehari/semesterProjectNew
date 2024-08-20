@@ -72,13 +72,16 @@
     width: 22rem;
 }
 
-.navigation button {
+.navigation .question-index-btn {
     margin: .2rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    text-align: center;
     width: 1rem;
     font-weight: 900;
+    border-radius: .1rem;
     color: black;
     border: 0.1rem solid grey;
+    cursor: pointer;
 }
 
 .navigation button:hover {

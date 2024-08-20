@@ -60,9 +60,9 @@
 
         <div>
             <div class="navigation">
-                <button (click)="setQuestionIndex(i)" *ngFor="let question of totalQuestions; let i = index" class="btn btn-link question-index-btn" id="{{ i + 1 }}">
-          {{ i + 1 }}
-        </button>
+                <div (click)="setQuestionIndex(i)" *ngFor="let question of totalQuestions; let i = index" class="question-index-btn" id="{{ i + 1 }}">
+                    {{ i + 1 }}
+                </div>
             </div>
         </div>
     </div>
