@@ -1,9 +1,15 @@
-<div class="container">
-    <div class="header">
-        <p class="h3">Materials</p>
-        <div class="mb-4 search-box" style="position: relative">
-            <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
-            <i class="fa-solid fa-filter" style="
+<div>
+    <div *ngIf="!materialsFound" class="spinner-container">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <div *ngIf="materialsFound" class="container">
+        <div class="header">
+            <p class="h3">Materials</p>
+            <div class="mb-4 search-box" style="position: relative">
+                <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
+                <i class="fa-solid fa-filter" style="
 cursor: pointer;
 position: absolute;
 top: 0.6rem;
@@ -11,40 +17,41 @@ right: 0.7rem;
 z-index: 100;
 "></i>
 
-            <label class="form-label" for="textInput">Filter</label>
+                <label class="form-label" for="textInput">Filter</label>
+            </div>
         </div>
-    </div>
-    <div class="table">
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Field of study</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">URL</th>
+        <div class="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Field of study</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">URL</th>
 
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let material of materials |filter:filterInput; let i = index">
-                    <th scope=" row ">{{i + 1}}</th>
-                    <td>{{material.fieldofstudy}}</td>
-                    <td>{{material.title}}</td>
-                    <td>{{material.materialURL}}</td>
-                    <!-- <td *ngIf="material.materialType =='student'">{{material.materialType}}</td>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let material of materials |filter:filterInput; let i = index">
+                        <th scope=" row ">{{i + 1}}</th>
+                        <td>{{material.fieldofstudy}}</td>
+                        <td>{{material.title}}</td>
+                        <td>{{material.materialURL}}</td>
+                        <!-- <td *ngIf="material.materialType =='student'">{{material.materialType}}</td>
                     <td *ngIf="material.materialType =='admin'" style="color: rgb(255, 0, 0);">{{material.materialType}}</td> -->
-                    <td>
-                        <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
-                        <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
-                    </td>
-                </tr>
+                        <td>
+                            <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
+                            <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
 
-    </div>
-    <div class="add-material">
-        <button class="btn btn-primary" [routerLink]="['/admin/home/add-material']">Add Material</button>
+        </div>
+        <div class="add-material">
+            <button class="btn btn-primary" [routerLink]="['/admin/home/add-material']">Add Material</button>
+        </div>
     </div>

@@ -14,6 +14,7 @@ export class MaterialsComponent {
   filterInput: any;
   materials: any;
 
+  materialsFound: boolean = false;
   newMaterial: Material = {};
 
   selectedMaterialId = '';
@@ -28,6 +29,7 @@ export class MaterialsComponent {
     this.matService.getAllMaterials();
     this.matService._materials.subscribe((next) => {
       this.materials = next;
+      this.materialsFound = true
     });
   }
 
