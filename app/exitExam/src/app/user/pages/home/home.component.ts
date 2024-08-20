@@ -16,4 +16,7 @@ export class HomeComponent implements OnInit {
       this.user = next;
     });
   }
+  logout() {
+    this.auth.logout();
+}
 }

@@ -14,7 +14,7 @@
                     </p>
                 </div>
                 <div>
-                    <button [routerLink]="['/user/sign-up']" routerLinkActive="router-link-active" class="btn btn-primary get-started-button">
+                    <button *ngIf="!user.isLoggedIn" [routerLink]="['/user/sign-up']" routerLinkActive="router-link-active" class="btn btn-primary get-started-button">
             Get Started
           </button>
                 </div>
@@ -95,8 +95,10 @@
                 </div>
             </div>
             <div class="footer-buttons">
-                <button class="btn btn-primary">Register</button>
-                <button class="btn btn-light">Login</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">Register</button>
+                <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">Logout</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">Login</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">Admin</button>
             </div>
         </div>
         <p class="copyright">&copy;2024 Graduate Gateway</p>
