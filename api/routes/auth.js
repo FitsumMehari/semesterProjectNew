@@ -64,7 +64,7 @@ router.post("/login", async(req, res, next) => {
             }
 
             const accessToken = jwt.sign({
-                    id: user._id,
+                    _id: user._id,
                     isAdmin: user.userType === "admin",
                     email: user.email,
                     username: user.username,
@@ -140,10 +140,13 @@ router.post("/loginAdmin", async(req, res, next) => {
 
 // Update
 router.put("/update", verifyToken, async(req, res, next) => {
-    // console.log('here on updateeee');
 
     try {
-        const user = await User.findByIdAndUpdate(req.body.id, req.body);
+        const user = await User.findByIdAndUpdate(req.body._id, {
+            username: req.body.username,
+            email: req.body.email,
+            fieldofstudy: req.body.fieldofstudy
+        });
 
         const accessToken = jwt.sign({
                 id: user._id,
