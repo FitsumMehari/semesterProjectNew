@@ -13,18 +13,20 @@ export class ExamsComponent {
   constructor(private examService: ExamService, private router: Router) {}
 
   filterInput: any;
+  examsFound: boolean = false;
   exams: any = [];
 
   exam: any = {};
 
   ngOnInit(): void {
-    this.refreshExamsList();
+    this.refreshExamsList()
   }
   // Refresh The List
   refreshExamsList() {
     this.examService.getAllExams();
     this.examService._exams.subscribe((next) => {
       this.exams = next;
+      this.examsFound = true;
     });
   }
 
