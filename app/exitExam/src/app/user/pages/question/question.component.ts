@@ -14,14 +14,16 @@ export class QuestionComponent implements OnInit {
     private questionService: QuestionService,
     private examService: ExamService,
     private router: Router
-  ) {}
+  ) {
+    this.timeLeft = 10800;
+  }
 
   examId: any;
   exam: any;
   currentQuestion: any;
   currentQuestionIndex: any;
   totalQuestions: any;
-  timeLeft: any;
+  timeLeft: any = 10800;
   interval: any;
   answers: any = [];
   correctCount = 0;
@@ -37,6 +39,8 @@ export class QuestionComponent implements OnInit {
         this.exam = next;
         this.startExam();
       });
+      this.timeLeft = 10800;
+
   }
 
   setQuestionIndex(index: any) {
@@ -57,13 +61,37 @@ export class QuestionComponent implements OnInit {
   }
 
   // timer controller
-  startTimer() {
-    this.timeLeft = 60;
+  startTimer(timeLeft: any) {
+    var timer = timeLeft;
+    let hours, minutes, seconds;
+    setInterval(function () {
+      hours = parseInt((timer / 3600).toString(), 10);
+      minutes = parseInt(((timer % 3600) / 60).toString(), 10);
+      seconds = parseInt((timer % 60).toString(), 10);
+
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      let timerElement = document.getElementById('index-time') || {
+        textContent: '',
+      };
+      timerElement.textContent = hours + ':' + minutes + ':' + seconds;
+
+      if (--timer < 0) {
+        timer = 0;
+      }
+    }, 1000);
+
+    if (--timer < 0) {
+      timer = timeLeft;
+      this.examCompleted = true;
+    }
   }
 
   // beginning
   startExam() {
-    this.startTimer();
+    this.startTimer(this.timeLeft);
     this.totalQuestions = this.exam.questions;
     this.setQuestionIndex(0);
   }

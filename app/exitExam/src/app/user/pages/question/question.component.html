@@ -3,8 +3,9 @@
     <div *ngIf="!examCompleted" class="content">
         <div class="index">
             <p class="index-title">Question {{ currentQuestionIndex + 1 }}</p>
-            <p class="index-time">
-                <i class="bi bi-clock"></i> {{ timeLeft | date : "h:mm:ss" }} left
+            <p class="index-time" id="index-time">
+                <!-- <i class="bi bi-clock"></i> {{ timeLeft | date : "h:mm:ss" }} left -->
+                <i class="bi bi-clock"></i> {{ timeLeft | date: "h:mm:ss" }} left
             </p>
         </div>
 
