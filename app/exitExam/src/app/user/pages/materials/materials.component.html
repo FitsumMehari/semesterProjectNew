@@ -18,7 +18,7 @@
                 <div>
                     <li *ngFor="let material of materials; let i = index;">
                         <p class="material-title">#{{i + 1}}. {{material.title}}</p>
-                        <button (click)="downloadMaterial(material.materialURL)"><i class="bi bi-download"></i></button>
+                        <a href="http://{{material.materialURL}}" target="_blank"><i class="bi bi-download"></i></a>
                     </li>
 
                 </div>

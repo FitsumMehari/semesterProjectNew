@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Material } from '../../Material.interface';
 import { MaterialService } from '../../../services/material.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-materials',
@@ -9,7 +10,11 @@ import { MaterialService } from '../../../services/material.service';
   styleUrl: './materials.component.css',
 })
 export class MaterialsComponent implements OnInit {
-  constructor(private auth: AuthService, private matService: MaterialService) {}
+  constructor(
+    private auth: AuthService,
+    private matService: MaterialService,
+    private router: Router
+  ) {}
 
   fieldofstudy: string | undefined;
   materials: any;
@@ -28,7 +33,6 @@ export class MaterialsComponent implements OnInit {
   }
 
   downloadMaterial(materialURL: string) {
-    console.log(materialURL);
-
+    window.open(materialURL);
   }
 }
