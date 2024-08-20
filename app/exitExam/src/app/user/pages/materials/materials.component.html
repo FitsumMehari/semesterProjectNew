@@ -9,6 +9,9 @@
                 <p>Download File</p>
             </div>
             <div class="body">
+                <div *ngIf="!materials" class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
                 <div>
                     <li *ngFor="let material of materials; let i = index;">
                         <p class="material-title">#{{i + 1}}. {{material.title}}</p>
