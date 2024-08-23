@@ -171,8 +171,10 @@ export class ExamService {
     };
     return this.http.put(url, exam, httpOptions).subscribe((next) => {
       this.response = next;
+      console.log(this.response);
+
       alert(this.response.message);
-      this.router.navigate(['/admin/home/exams']);
+      this.router.navigate(['/admin/home/edit-exam', this.response.exam._id]);
     });
   }
 }
