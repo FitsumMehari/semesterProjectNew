@@ -25,6 +25,7 @@ z-index: 100;
                         <th scope="col">choice B</th>
                         <th scope="col">choice C</th>
                         <th scope="col">choice D</th>
+                        <th scope="col">correct choice</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@ z-index: 100;
                         <td>{{question.choices.b}}</td>
                         <td>{{question.choices.c}}</td>
                         <td>{{question.choices.d}}</td>
+                        <td>{{question.answer}}</td>
                         <td>
                             <i (click)="updateQuestion(exam.questions.indexOf(question)) " class="icon icon-edit bi bi-pencil "></i>
                             <i (click)="deleteQuestion(exam.questions.indexOf(question)) " class="icon icon-delete bi bi-trash "></i>
