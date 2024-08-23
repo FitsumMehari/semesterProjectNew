@@ -25,8 +25,6 @@ export class EditQuestionComponent {
       this.examService._exam.subscribe((next) => {
         this.exam = next[0];
         this.question = this.exam.questions[params['questionId']];
-        console.log(this.question.question);
-
         this.questionIndex = this.exam.questions.indeOf(this.question);
       });
     });
