@@ -22,6 +22,7 @@
                     <th scope="col">Username</th>
                     <th scope="col">Exam Title</th>
                     <th scope="col">Result</th>
+                    <th scope="col">Date</th>
 
                     <!-- <th scope="col">Action</th> -->
                 </tr>
@@ -32,6 +33,7 @@
                     <td>{{ result.username }}</td>
                     <td>{{ result.examTitle }}</td>
                     <td>{{ result.score }}</td>
+                    <td>{{ result.createdAt | date}}</td>
 
                     <!-- <td>
                         <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
