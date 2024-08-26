@@ -11,16 +11,23 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private auth: AuthService) {}
 
   user: User = {};
+  updatedUser: User = {};
 
   ngOnInit(): void {
     this.auth._user.subscribe((next) => {
       this.user = next;
     });
+    this.setUpdatedUser(this.user);
   }
+
+  setUpdatedUser(user:any) {
+    Object.assign(this.updatedUser, user)
+  }
+
 
   // Login
   update() {
-    this.auth.updateUser(this.user);
+    this.auth.updateUser(this.updatedUser);
   }
 
   // Toggle password
