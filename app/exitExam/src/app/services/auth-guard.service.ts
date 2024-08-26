@@ -19,7 +19,6 @@ export class AuthGuardService implements CanActivate, OnInit {
     let token = localStorage.getItem('token');
     if (!!token) {
       this.user = jwtDecode(token);
-      console.log(this.user?.isLoggedIn);
 
       if (this.user?.isLoggedIn) {
         return true;
