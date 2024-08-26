@@ -20,8 +20,19 @@ router.post("/register", async(req, res, next) => {
         !req.body.email ||
         !req.body.fieldofstudy
     ) {
-        res.status(400).json("Please fill the required inputs!");
+        res.status(200).json({ message: "Please fill the required inputs!" });
     } else {
+
+        // Check if user email exists
+        const existingUser = await User.findOne({
+            email: req.body.email
+
+        })
+
+        if (!!existingUser) {
+            return res.status(200).json({ message: "Email already taken!" })
+        }
+
         const newUser = new User({
             username: req.body.username,
             password: md5(req.body.password),
