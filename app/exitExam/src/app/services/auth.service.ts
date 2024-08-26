@@ -69,6 +69,11 @@ export class AuthService implements OnInit {
 
   // Register
   register(user: User) {
+
+    if(!user) {
+       alert("Please fill the required inputs!")
+      this.router.navigate(['/user/sign-up']);
+    }
     const url = environment.apiURL + 'auth/register';
 
     const httpOptions = {
