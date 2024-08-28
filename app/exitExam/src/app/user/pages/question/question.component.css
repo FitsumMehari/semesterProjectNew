@@ -133,3 +133,17 @@
     font-size: 600;
     color: rgb(35, 202, 35);
 }
+
+@media (max-width: 992px) {
+    .navigation {
+        display: none;
+    }
+}
+
+@media (max-width: 870px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

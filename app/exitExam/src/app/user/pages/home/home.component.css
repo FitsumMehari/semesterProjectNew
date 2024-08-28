@@ -5,21 +5,28 @@
 .banner {
     color: #0A215F;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    max-width: 100vw;
+    height: 50vh;
+    padding: 2rem;
+}
+
+.banner-content {
+    width: 80%;
 }
 
 .banner-title {
     padding-left: 0.5rem;
-    font-size: 3.5rem;
+    font-size: 4vw;
     font-weight: 700;
-    width: 35rem;
+    width: 100%;
     border-left: 0.5rem solid #0A215F;
 }
 
 .banner-subtitle {
     padding-left: 1rem;
-    font-size: 1rem;
+    font-size: 1.5vw;
     font-weight: 700;
     letter-spacing: .05rem;
 }
@@ -42,16 +49,19 @@
     background-color: #10369e;
 }
 
+.banner-img {
+    width: 80%;
+}
+
 
 /* second section */
 
 .exams-div {
-    background-color: rgba(10, 30, 95, .5);
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
     position: relative;
+    background-color: rgba(10, 30, 95, .5);
     padding: 2rem;
-    height: 30rem;
+    height: 73vh;
 }
 
 .card {
@@ -60,38 +70,44 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: auto;
-    width: 15rem;
+    position: relative;
+    height: 50%;
+    width: 25%;
 }
 
 .card img {
-    height: 8rem;
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 10%;
 }
 
 .card p {
+    bottom: 0%;
+    position: absolute;
     margin: 2rem;
 }
 
 .card-1 {
     position: absolute;
-    bottom: -2rem;
-    left: 10rem;
+    bottom: -5%;
+    left: 10%;
     background-color: #DBEDF5;
     color: #1D4645;
 }
 
 .card-2 {
     position: absolute;
-    bottom: 5rem;
-    left: 35rem;
+    bottom: 20%;
+    left: 40%;
     background-color: #102F2E;
     color: #fff;
 }
 
 .card-3 {
     position: absolute;
-    bottom: 10rem;
-    left: 60rem;
+    bottom: 45%;
+    right: 5%;
     background-color: #FEF1E2;
     color: #1D4645;
 }

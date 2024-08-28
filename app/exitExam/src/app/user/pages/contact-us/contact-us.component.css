@@ -7,6 +7,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .banner-title {
@@ -33,7 +35,8 @@
 }
 
 .map {
-    height: 20rem;
+    height: 50%;
+    width: 100%;
     padding: 3rem;
 }
 
