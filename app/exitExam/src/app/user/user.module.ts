@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstLetterPipe } from '../first-word.pipe';
 import { AuthGuardService } from '../services/auth-guard.service';
+import { TutorialsComponent } from './pages/tutorials/tutorials.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'sign-up', component: SignUpComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
+      { path: 'tutorials', component: TutorialsComponent, canActivate: [AuthGuardService] },
       { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuardService] },
       { path: 'exam', component: ExamHomeComponent, canActivate: [AuthGuardService] },
       { path: 'question', component: QuestionComponent, canActivate: [AuthGuardService] },
@@ -64,7 +66,8 @@ const routes: Routes = [
     QuestionComponent,
     ResultComponent,
     MessageComponent,
-    FirstLetterPipe
+    FirstLetterPipe,
+    TutorialsComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
   exports: [
