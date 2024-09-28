@@ -8,32 +8,35 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+                <a class="nav-link" routerLink="home" routerLinkActive="active">{{
+          "NavBar.Home" | translate
+        }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="exam" routerLinkActive="active">Exam
+                <a class="nav-link" routerLink="exam" routerLinkActive="active">{{"NavBar.Exam" | translate}}
         </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" routerLink="tutorials" routerLinkActive="active">Tutorials</a
-      >
-    </li>
+                <a class="nav-link" routerLink="tutorials" routerLinkActive="active">{{"NavBar.Tutorials" | translate}}</a
+        >
+      </li>
 
-            <li class="nav-item">
-                <a class="nav-link" routerLink="materials" routerLinkActive="active">Materials</a
+      <li class="nav-item">
+        <a class="nav-link" routerLink="materials" routerLinkActive="active"
+          >{{"NavBar.Materials" | translate}}</a
         >
       </li>
 
       <li class="nav-item">
         <a class="nav-link" routerLink="about-us" routerLinkActive="active"
-          >About Us</a
+          >{{"NavBar.About Us" | translate}}</a
         >
       </li>
 
       <li class="nav-item">
         <a class="nav-link" routerLink="contact-us" routerLinkActive="active"
-          >Contact</a
+          >{{"NavBar.Contact" | translate}}</a
         >
       </li>
 
@@ -43,11 +46,11 @@
           class="nav-link"
           routerLink="sign-in"
           routerLinkActive="active"
-          >Sign In</a
+          >{{"NavBar.Sign-in" | translate}}</a
         >
         <a
           *ngIf="user?.isLoggedIn"
-          class="nav-link  profile-link"
+          class="nav-link profile-link"
           id="navbarDropdown"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
@@ -63,13 +66,21 @@
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="/user/update-profile"
-            ><i class="bi bi-person-circle"></i> Profile</a
+            ><i class="bi bi-person-circle"></i> {{"NavBar.Profile" | translate}}</a
           >
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="logout()" style="cursor: pointer"
-            ><i class="bi bi-box-arrow-right"></i> Logout
+            ><i class="bi bi-box-arrow-right"></i> {{"NavBar.Logout" | translate}}
           </a>
     </div>
+    </li>
+
+    <li class="nav-item">
+        <select name="" id="" (change)="changeLang($event)" class="form-select">
+          <option value="en" [selected]="lang == 'en'">En</option>
+          <option value="am" [selected]="lang == 'am'">አማ</option>
+          <option value="tg" [selected]="lang == 'tg'">ትግ</option>
+        </select>
     </li>
     </ul>
     </div>

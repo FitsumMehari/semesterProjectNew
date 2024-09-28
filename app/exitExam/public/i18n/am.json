@@ -1,0 +1,13 @@
+{
+    "NavBar": {
+        "Home": "ዋና ገጽ",
+        "Exam": "ፈተና",
+        "Tutorials": "ቪድዮዎች",
+        "Materials": "መጻሕፍቶች",
+        "About Us": "ስለ እኛ",
+        "Contact": "አድራሻ",
+        "Sign-in": "መግብያ",
+        "Profile": "ማንነት",
+        "Logout": "ውጣ"
+    }
+}

@@ -21,6 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstLetterPipe } from '../first-word.pipe';
 import { AuthGuardService } from '../services/auth-guard.service';
 import { TutorialsComponent } from './pages/tutorials/tutorials.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpLoaderFactory } from '../app.module';
 
 
 const routes: Routes = [
@@ -69,7 +72,7 @@ const routes: Routes = [
     FirstLetterPipe,
     TutorialsComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, TranslateModule],
   exports: [
     UserComponent,
     HomeComponent,
@@ -87,6 +90,7 @@ const routes: Routes = [
     QuestionComponent,
     ResultComponent,
     MessageComponent,
+    TranslateModule
   ],
 })
 export class UserModule {}

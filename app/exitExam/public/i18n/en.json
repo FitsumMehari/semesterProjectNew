@@ -1,0 +1,13 @@
+{
+    "NavBar": {
+        "Home": "Home",
+        "Exam": "Exam",
+        "Tutorials": "Tutorials",
+        "Materials": "Materials",
+        "About Us": "About Us",
+        "Contact": "Contact",
+        "Sign-in": "Sign In",
+        "Profile": "Profile",
+        "Logout": "Logout"
+    }
+}
