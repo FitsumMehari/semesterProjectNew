@@ -1,0 +1,122 @@
+{
+    "NavBar": {
+        "Home": "Home",
+        "Exam": "Exam",
+        "Tutorials": "Tutorials",
+        "Materials": "Materials",
+        "About Us": "About Us",
+        "Contact": "Contact",
+        "Sign-in": "Sign In",
+        "Profile": "Profile",
+        "Logout": "Logout"
+    },
+    "Home": {
+        "Banner-Title": "Conquer Hurdles, Excel In Exam",
+        "Welcome": "Welcome",
+        "Banner-SubTitle": "Welcome to GraduateGateway Website!",
+        "Banner-Paragraph": "GraduateGateway is a team based project intended to prepare students for the MOE Exit Exam.",
+        "Banner-Question": "Ready to try the exams?",
+        "Get Started": "Get Started",
+        "Description-Title": "You're in good company.",
+        "Description-Paragraph": "Graduate Gateway has collaborated with Mekelle University and uses Ministry of Education Ethiopia as a reference for all the Exams provided in this Website.",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "Home",
+        "About-Us": "About Us",
+        "Contact": "Contact",
+        "Register": "Register",
+        "Logout": "Logout",
+        "Login": "Login",
+        "Admin": "Admin",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+    },
+    "Sign-in": {
+        "Login": "Login",
+        "Email": "Email",
+        "Password": "Password",
+        "Forgot-Password": "Forgot Password",
+        "Don't have an account": "Don't have an account?",
+        "Register Here": "Register Here"
+    },
+    "About-us": {
+        "Banner-Title": "Conquer Hurdles, Excel In Exam",
+        "Banner-SubTitle": "Welcome to GraduateGateway Website!",
+        "Banner-Paragraph": "GraduateGateway is a team based project intended to prepare students for the MOE Exit Exam.",
+        "Get Started": "Get Started",
+        "Take Exams Anytime, Anywhere": "Take Exams Anytime, Anywhere",
+        "Description-Title": "What we provide",
+        "Description-Paragraph-1": "We provide a centralized location for study materials including past exam papers and practice questions.",
+        "Description-Paragraph-2": "Facilitate full-length mock exams that simulate the actual testing environment to help users become familiar with the exam format and time constraints.",
+        "Our Teams": "Our Teams",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "Home",
+        "About us": "About us",
+        "Contact": "Contact",
+        "Register": "Register",
+        "Logout": "Logout",
+        "Login": "Login",
+        "Admin": "Admin",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+    },
+    "Contact": {
+        "Banner-Title": "We would love to hear from you.",
+        "Head Office": "Head Office",
+        "Mekelle University": "Mekelle University",
+        "Email": "Email",
+        "Call us": "Call us",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "Home",
+        "About-Us": "About us",
+        "Contact": "Contact",
+        "Register": "Register",
+        "Logout": "Logout",
+        "Login": "Login",
+        "Admin": "Admin",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+
+    },
+    "Sign-up": {
+        "Create an account": "Create an account",
+        "Name": "Name",
+        "Email": "Email",
+        "Password": "Password",
+        "Repeat Password": "Repeat Password",
+        "Field of study": "Field of study",
+        "Already have an account": "Already have an account?",
+        "Register": "Register",
+        "Login here": "Login here"
+    },
+    "Exam": {
+        "Please choose Year of Exam": "Please choose Year of Exam"
+    },
+    "Question": {
+        "Question": "Question",
+        "left": "left",
+        "Instruction": "Instruction",
+        "Choose the best answer. You have been provided with 3 hours.": "Choose the best answer. You have been provided with 3 hours.",
+        "Previous": "Previous",
+        "Next": "Next",
+        "Finish": "Finish",
+        "Exam Score": "Exam Score",
+        "Excellent": "Excellent",
+        "Very good": "Very good",
+        "Good": "Good",
+        "Average": "Average",
+        "Can be improved": "Can be improved",
+        "Fail": "Fail",
+        "Exit": "Exit"
+    },
+    "Materials": {
+        "Title": "Here are some Books related to your Field of Study.",
+        "Books": "Books",
+        "Download File": "Download File"
+    },
+    "Update-Profile": {
+        "Update your profile": "Update your profile",
+        "Name": "Name",
+        "Email": "Email",
+        "Password": "Password",
+        "Repeat Password": "Repeat Password",
+        "Field of study": "Field of study",
+        "Update Profile": "Update Profile"
+    }
+}

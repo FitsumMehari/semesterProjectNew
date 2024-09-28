@@ -1,13 +1,121 @@
 {
     "NavBar": {
-        "Home": "ዋና ገጽ",
+        "Home": "ቤት",
         "Exam": "ፈተና",
-        "Tutorials": "ቪድዮዎች",
-        "Materials": "መጻሕፍቶች",
+        "Tutorials": "ትምህርት",
+        "Materials": "ቁሳቁስ",
         "About Us": "ስለ እኛ",
-        "Contact": "አድራሻ",
-        "Sign-in": "መግብያ",
-        "Profile": "ማንነት",
-        "Logout": "ውጣ"
+        "Contact": "ግንኙነት",
+        "Sign-in": "ግባ",
+        "Profile": "መገለጫ",
+        "Logout": "ወጣ"
+    },
+    "Home": {
+        "Banner-Title": "ችግሮችን ድል ይያዙ ፣ በፈተና ተሳካ",
+        "Welcome": "ሰላም",
+        "Banner-SubTitle": "ወደ GraduateGateway ድረ-ገጽ በደህና መጡ!",
+        "Banner-Paragraph": "GraduateGateway በMOE የመጨረሻ ፈተና ለተማሪዎች ለማዘጋጀት የታቀደ የቡድን ፕሮጀክት ነው።",
+        "Banner-Question": "ፈተናዎችን ለመሞከር ዝግጁ ነዎት?",
+        "Get Started": "ይጀምሩ",
+        "Description-Title": "ጥሩ ኩባንያ ውስጥ ነዎት።",
+        "Description-Paragraph": "Graduate Gateway ከመቀሌ ዩኒቨርሲቲ ጋር ተባብሮ ሲሰራ በዚህ ድረ-ገጽ ላይ የተሰጡትን ሁሉንም ፈተናዎች ለማጣቀስ እንደ ኢትዮጵያ የትምህርት ሚኒስቴር ይጠቀማል።",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "ቤት",
+        "About-Us": "ስለ እኛ",
+        "Contact": "ግንኙነት",
+        "Register": "ይመዝገቡ",
+        "Logout": "ወጣ",
+        "Login": "ግባ",
+        "Admin": "አስተዳዳሪ",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+    },
+    "Sign-in": {
+        "Login": "ግባ",
+        "Email": "ኢሜይል",
+        "Password": "የይለፍ ቃል",
+        "Forgot-Password": "የይለፍ ቃል ረሳህ?",
+        "Don't have an account": "መለያ የለዎትም?",
+        "Register Here": "እዚህ ይመዝገቡ"
+    },
+    "About-us": {
+        "Banner-Title": "ችግሮችን ድል ይያዙ ፣ በፈተና ተሳካ",
+        "Banner-SubTitle": "ወደ GraduateGateway ድረ-ገጽ በደህና መጡ!",
+        "Banner-Paragraph": "GraduateGateway በMOE የመጨረሻ ፈተና ለተማሪዎች ለማዘጋጀት የታቀደ የቡድን ፕሮጀክት ነው።",
+        "Get Started": "ይጀምሩ",
+        "Take Exams Anytime, Anywhere": "ፈተናዎችን በማንኛውም ጊዜ ፣ በማንኛውም ቦታ ይውሰዱ",
+        "Description-Title": "ምን እንሰጣለን",
+        "Description-Paragraph-1": "የቀድሞ ፈተና ወረቀቶችን እና የልምምድ ጥያቄዎችን ጨምሮ የጥናት ቁሳቁሶችን ማከማቻ ቦታ እንሰጣለን።",
+        "Description-Paragraph-2": "ተጠቃሚዎች የፈተናውን ቅርጸት እና የጊዜ ገደቦችን እንዲያውቁ ለመርዳት የእውነተኛውን የፈተና አከባቢን የሚመስሉ ሙሉ የሙከራ ፈተናዎችን እንመቻለን።",
+        "Our Teams": "ቡድኖቻችን",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "ቤት",
+        "About us": "ስለ እኛ",
+        "Contact": "ግንኙነት",
+        "Register": "ይመዝገቡ",
+        "Logout": "ወጣ",
+        "Login": "ግባ",
+        "Admin": "አስተዳዳሪ",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+    },
+    "Contact": {
+        "Banner-Title": "ከእርስዎ መስማት እንወዳለን።",
+        "Head Office": "ዋና መሥሪያ ቤት",
+        "Mekelle University": "መቀሌ ዩኒቨርሲቲ",
+        "Email": "ኢሜይል",
+        "Call us": "ይደውሉልን",
+        "Graduate Gateway": "Graduate Gateway",
+        "Home": "ቤት",
+        "About-Us": "ስለ እኛ",
+        "Contact": "ግንኙነት",
+        "Register": "ይመዝገቡ",
+        "Logout": "ወጣ",
+        "Login": "ግባ",
+        "Admin": "አስተዳዳሪ",
+        "2024 Graduate Gateway": "2024 Graduate Gateway"
+    },
+    "Sign-up": {
+        "Create an account": "መለያ ይፍጠሩ",
+        "Name": "ስም",
+        "Email": "ኢሜይል",
+        "Password": "የይለፍ ቃል",
+        "Repeat Password": "የይለፍ ቃል ድገም",
+        "Field of study": "የጥናት መስክ",
+        "Already have an account": "መለያ አለዎት?",
+        "Register": "ይመዝገቡ",
+        "Login here": "እዚህ ግባ"
+    },
+    "Exam": {
+        "Please choose Year of Exam": "እባክዎ የፈተናውን ዓመት ይምረጡ"
+    },
+    "Question": {
+        "Question": "ጥያቄ",
+        "left": "ቀረ",
+        "Instruction": "መመሪያ",
+        "Choose the best answer. You have been provided with 3 hours.": "ምርጥ መልስ ይምረጡ። 3 ሰዓት ተሰጥዎታል።",
+        "Previous": "ቀድሞ",
+        "Next": "ቀጣይ",
+        "Finish": "ጨርስ",
+        "Exam Score": "የፈተና ውጤት",
+        "Excellent": "በጣም ጥሩ",
+        "Very good": "በጣም ጥሩ",
+        "Good": "ጥሩ",
+        "Average": "አማካይ",
+        "Can be improved": "ሊሻሻል ይችላል",
+        "Fail": "ውድቅ",
+        "Exit": "ውጣ"
+    },
+    "Materials": {
+        "Title": "እነዚህ የእርስዎን የጥናት መስክ ጋር ተዛማጅ አንዳንድ መጻሕፍት ናቸው።",
+        "Books": "መጻሕፍት",
+        "Download File": "ፋይል ያውርዱ"
+    },
+    "Update-Profile": {
+        "Update your profile": "መገለጫዎን ያዘምኑ",
+        "Name": "ስም",
+        "Email": "ኢሜይል",
+        "Password": "የይለፍ ቃል",
+        "Repeat Password": "የይለፍ ቃል ድገም",
+        "Field of study": "የጥናት መስክ",
+        "Update Profile": "መገለጫ ያዘምኑ"
     }
 }
