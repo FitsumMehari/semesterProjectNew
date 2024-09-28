@@ -2,10 +2,10 @@
     <p class="exam-title">{{exam.fieldofstudy}} {{exam.examTitle}}</p>
     <div *ngIf="!examCompleted" class="content">
         <div class="index">
-            <p class="index-title">Question {{ currentQuestionIndex + 1 }}</p>
+            <p class="index-title">{{"Question.Question" |translate}} {{ currentQuestionIndex + 1 }}</p>
             <p class="index-time" id="index-time">
                 <!-- <i class="bi bi-clock"></i> {{ timeLeft | date : "h:mm:ss" }} left -->
-                <i class="bi bi-clock"></i> {{ timeLeft | date: "h:mm:ss" }} left
+                <i class="bi bi-clock"></i> {{ timeLeft | date: "h:mm:ss" }} {{"Question.left" |translate}}
             </p>
         </div>
 
@@ -13,7 +13,7 @@
         <div>
             <div class="exam" *ngIf="currentQuestion && !!totalQuestions">
                 <div class="question-title">
-                    <u>Instruction</u>: Choose the best answer. You have been provided with 3 hours.
+                    <u>{{"Question.Instruction" |translate}}</u>: {{"Question.Choose the best answer. You have been provided with 3 hours." |translate}}
                 </div>
 
                 <div class="question">
@@ -40,7 +40,7 @@
           " (click)="
             setQuestionIndex(currentQuestionIndex - 1); resetChoiceLineStyles()
           " class="btn btn-seconday">
-          Previous
+          {{"Question.Previous" |translate}}
         </button>
                 <button *ngIf="
             currentQuestionIndex != totalQuestions.length &&
@@ -49,11 +49,11 @@
           " (click)="
             setQuestionIndex(currentQuestionIndex + 1); resetChoiceLineStyles()
           " class="btn btn-primary">
-          Next
+          {{"Question.Next" |translate}}
         </button>
                 <button *ngIf="(currentQuestionIndex == totalQuestions.length - 1) &&
             !!answers[currentQuestionIndex]" (click)="validateAnswers(); resetChoiceLineStyles()" class="btn btn-primary">
-          Finish
+          {{"Question.Finish" |translate}}
         </button>
             </div>
         </div>
@@ -68,39 +68,39 @@
     </div>
 
     <div *ngIf="examCompleted" class="exam-finished-content">
-        <p class="score-title">Exam Score</p>
+        <p class="score-title">{{"Question.Exam Score" |translate}}</p>
         <p class="score">{{ correctCount }} / {{ totalQuestions.length }}</p>
         <p class="distinction" *ngIf="correctCount / totalQuestions.length >= 0.9">
-            Excellent
+            {{"Question.Excellent" |translate}}
         </p>
         <p class="distinction" *ngIf="
         correctCount / totalQuestions.length >= 0.8 &&
         correctCount / totalQuestions.length < 0.9
       ">
-            Very good
+            {{"Question.Very good" |translate}}
         </p>
         <p class="distinction" *ngIf="
         correctCount / totalQuestions.length >= 0.7 &&
         correctCount / totalQuestions.length < 0.8
       ">
-            Good
+            {{"Question.Good" |translate}}
         </p>
         <p class="distinction" *ngIf="
         correctCount / totalQuestions.length >= 0.6 &&
         correctCount / totalQuestions.length < 0.7
       ">
-            Average
+            {{"Question.Average" |translate}}
         </p>
         <p class="distinction" style="color: rgb(200, 255, 0);" *ngIf="
         correctCount / totalQuestions.length >= 0.5 &&
         correctCount / totalQuestions.length < 0.6
       ">
-            Can be improved
+            {{"Question.Can be improved" |translate}}
         </p>
         <p class="distinction" style="color: red;" *ngIf="correctCount / totalQuestions.length < 0.5">
-            Fail
+            {{"Question.Fail" |translate}}
         </p>
 
-        <button class="btn btn-information" (click)="exitPage()">Exit</button>
+        <button class="btn btn-information" (click)="exitPage()">{{"Question.Exit" |translate}}</button>
     </div>
 </div>

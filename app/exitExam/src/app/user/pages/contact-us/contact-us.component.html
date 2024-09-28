@@ -3,21 +3,21 @@
         <div class="container banner">
             <div class="banner-content">
                 <div>
-                    <p class="banner-title">We would love to hear from you.</p>
+                    <p class="banner-title">{{"Contact.Banner-Title" | translate}}</p>
                 </div>
 
                 <div>
                     <p class="banner-subtitle">
-                        <i class="bi bi-geo-alt-fill"></i>Head Office
+                        <i class="bi bi-geo-alt-fill"></i>{{"Contact.Head Office" |translate}}
                     </p>
-                    <p class="banner-value">Mekelle University</p>
+                    <p class="banner-value">{{"Contact.Mekelle University" |translate}}</p>
                     <p class="banner-subtitle">
-                        <i class="bi bi-envelope-at-fill"></i>Email
+                        <i class="bi bi-envelope-at-fill"></i>{{"Contact.Email" | translate}}
                     </p>
-                    <p class="banner-value">example&#64;mu.edu</p>
+                    <p class="banner-value">example&#64;mu.edu.et</p>
 
                     <p class="banner-subtitle">
-                        <i class="bi bi-phone-fill"></i>Call us
+                        <i class="bi bi-phone-fill"></i>{{"Contact.Call us" |translate}}
                     </p>
                     <p class="banner-value">+2519111111</p>
 
@@ -42,12 +42,12 @@
             </div>
             <div class="footer-nav">
                 <div>
-                    <p class="footer-title">Graduate Gateway</p>
+                    <p class="footer-title">{{"Contact.Graduate Gateway" | translate}}</p>
                 </div>
                 <div class="links">
-                    <a href="home">Home</a>
-                    <a href="about-us">About us</a>
-                    <a href="contact-us">Contact us</a>
+                    <a href="home">{{"Contact.Home" | translate}}</a>
+                    <a href="about-us">{{"Contact.About-Us" | translate}}</a>
+                    <a href="contact-us">{{"Contact.Contact" | translate}}</a>
                 </div>
                 <div class="icons">
                     <span class="icon"><i class="bi bi-twitter-x"></i> </span>
@@ -56,12 +56,12 @@
                 </div>
             </div>
             <div class="footer-buttons">
-                <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">Register</button>
-                <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">Logout</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">Login</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">Admin</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">{{"Contact.Register" | translate}}</button>
+                <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">{{"Contact.Logout" | translate}}</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">{{"Contact.Login" | translate}}</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"Contact.Admin" | translate}}</button>
             </div>
         </div>
-        <p class="copyright">&copy;2024 Graduate Gateway</p>
+        <p class="copyright">&copy;{{"Contact.2024 Graduate Gateway" | translate}}</p>
     </footer>
 </div>

@@ -2,19 +2,19 @@
     <div class="form card" style="border-radius: 15px">
         <div class="card-body">
             <h2 class="text-uppercase fs-4 text-center mb-3 form-title">
-                Login
+                {{"Sign-in.Login" | translate}}
             </h2>
 
             <form #loginForm="ngForm" (ngSubmit)="login()">
 
 
                 <div class="form-outline mb-2">
-                    <label class="" for="email">Email</label>
+                    <label class="" for="email">{{"Sign-in.Email" | translate}}</label>
                     <input type="email" [(ngModel)]="user.email" name="email" id="email" class="form-control" />
                 </div>
 
                 <div class="password-field form-outline mb-2">
-                    <label class="" for="password">Password</label>
+                    <label class="" for="password">{{"Sign-in.Password" | translate}}</label>
                     <input type="password" [(ngModel)]="user.password" name="password" id="password" class="form-control" />
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
@@ -22,18 +22,18 @@
                 </div>
 
                 <div>
-                    <a [routerLink]="['/user/reset-password']">Forgot password</a>
+                    <a [routerLink]="['/user/reset-password']">{{"Sign-in.Forgot-Password" | translate}}</a>
                 </div>
 
 
 
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">{{"Sign-in.Login" | translate}}</button>
                 </div>
 
                 <p class="text-center text-muted mt-2 mb-0">
-                    Don't have an account?
-                    <a [routerLink]="['/user/sign-up']" class="fw-bold text-body login-link"><u>Register here</u></a
+                    {{"Sign-in.Don't have an account" | translate}}
+                    <a [routerLink]="['/user/sign-up']" class="fw-bold text-body login-link"><u>{{"Sign-in.Register Here" | translate}}</u></a
         >
       </p>
     </form>

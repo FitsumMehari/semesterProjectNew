@@ -3,23 +3,23 @@
         <div class="container banner">
             <div class="banner-content">
                 <div>
-                    <p class="banner-title">Conquer Hurdles, Excel In Exam</p>
+                    <p class="banner-title">{{"Home.Banner-Title" | translate}}</p>
                 </div>
                 <div>
-                    <p *ngIf="user?.isLoggedIn" class="banner-subtitle">Welcome {{user?.username}}!</p>
-                    <p *ngIf="!user?.isLoggedIn" class="banner-subtitle">Welcome to GraduateGateway Website!</p>
+                    <p *ngIf="user?.isLoggedIn" class="banner-subtitle">{{"Home.Welcome" | translate}} {{user?.username}}!</p>
+                    <p *ngIf="!user?.isLoggedIn" class="banner-subtitle">{{"Home.Banner-SubTitle" | translate}}</p>
                 </div>
                 <div>
                     <p *ngIf="!user?.isLoggedIn" class="banner-paragraph">
-                        GraduateGateway is a team based project intended to prepare students for the MOE Exit Exam.
+                        {{"Home.Banner-Paragraph" | translate}}
                     </p>
                     <p *ngIf="user?.isLoggedIn" class="banner-paragraph">
-                        Ready to try the exams?
+                        {{"Home.Banner-Question" | translate}}
                     </p>
                 </div>
                 <div *ngIf="!user?.isLoggedIn">
                     <button [routerLink]="['/user/sign-up']" routerLinkActive="router-link-active" class="btn btn-primary get-started-button">
-            Get Started
+            {{"Home.Get Started" | translate}}
           </button>
                 </div>
             </div>
@@ -47,11 +47,11 @@
     <div class="container description">
         <div class="description-content">
             <div>
-                <p class="description-title">You're in good company.</p>
+                <p class="description-title">{{"Home.Description-Title" |translate}}</p>
             </div>
             <div>
                 <p class="description-paragraph">
-                    Graduate Gateway has collaborated with Mekelle University and uses Ministry of Education Ethiopia as a reference for all the Exams provided in this Website.
+                    {{"Home.Description-Paragraph" | translate}}
                 </p>
             </div>
             <div class="logos">
@@ -70,12 +70,12 @@
             </div>
             <div class="footer-nav">
                 <div>
-                    <p class="footer-title">Graduate Gateway</p>
+                    <p class="footer-title">{{"Home.Graduate Gateway" | translate}}</p>
                 </div>
                 <div class="links">
-                    <a href="home">Home</a>
-                    <a href="about-us">About us</a>
-                    <a href="contact-us">Contact us</a>
+                    <a href="home">{{"Home.Home" | translate}}</a>
+                    <a href="about-us">{{"Home.About-Us" | translate}}</a>
+                    <a href="contact-us">{{"Home.Contact" | translate}}</a>
                 </div>
                 <div class="icons">
                     <span class="icon"><i class="bi bi-twitter-x"></i>
@@ -86,12 +86,12 @@
                 </div>
             </div>
             <div class="footer-buttons">
-                <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">Register</button>
-                <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">Logout</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">Login</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">Admin</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">{{"Home.Register" | translate}}</button>
+                <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">{{"Home.Logout" | translate}}</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">{{"Home.Login" | translate}}</button>
+                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"Home.Admin" | translate}}</button>
             </div>
         </div>
-        <p class="copyright">&copy;2024 Graduate Gateway</p>
+        <p class="copyright">&copy;{{"Home.2024 Graduate Gateway" | translate}}</p>
     </footer>
 </div>

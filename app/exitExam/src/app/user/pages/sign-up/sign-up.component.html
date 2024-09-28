@@ -2,36 +2,36 @@
     <div class="form card" style="border-radius: 15px">
         <div class="card-body">
             <h2 class="text-uppercase fs-4 text-center mb-3 form-title">
-                Create an account
+                {{"Sign-up.Create an account" |translate}}
             </h2>
 
             <form #registerForm="ngForm" (ngSubmit)="register()">
                 <div class="form-outline mb-2">
-                    <label class=" " for="username">Your Name*</label>
+                    <label class=" " for="username">{{"Sign-up.Name" |translate}}*</label>
                     <input maxlength="12" type="text" [(ngModel)]="user.username" name="username" id="username" class="form-control" required />
                 </div>
 
                 <div class="form-outline mb-2">
-                    <label class="" for="email">Your Email*</label>
+                    <label class="" for="email">{{"Sign-up.Email" |translate}}*</label>
                     <input type="email" [(ngModel)]="user.email" name="email" id="email" class="form-control" required />
                 </div>
 
                 <div class="password-field form-outline mb-2">
-                    <label class="" for="password">Password*</label>
+                    <label class="" for="password">{{"Sign-up.Password" |translate}}*</label>
                     <input type="password" [(ngModel)]="user.password" name="password" id="password" class="form-control" required />
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
                     <i (click)="togglePassword('password')" class="eye-icon bi bi-eye"></i>
                 </div>
 
                 <div class="confirm-password-field form-outline mb-2">
-                    <label class=" " for="confirm-password">Repeat your password*</label>
+                    <label class=" " for="confirm-password">{{"Sign-up.Repeat Password" |translate}}*</label>
                     <input type="password" [(ngModel)]="user.confirmPassword" name="password" id="confirm-password" class="form-control" required />
                     <i (click)="togglePassword('confirm-password')" class="eye-icon bi bi-eye"></i>
                     <i (click)="togglePassword('confirm-password')" class="eye-icon bi bi-eye"></i>
                 </div>
 
                 <div class="form-outline mb-2">
-                    <label class=" " for="field-of-study">Field of Study*</label>
+                    <label class=" " for="field-of-study">{{"Sign-up.Field of study" |translate}}*</label>
                     <select [(ngModel)]="user.fieldofstudy" name="fieldofstudy" id="field-of-study" class="form-control form-select" required>
                       <option class="form-control" value="Electrical and Computer Engineering">Elecrical and Computer Engineering</option>
                       <option class="form-control" value="Civil Engineering">Civil Engineering</option>
@@ -39,12 +39,12 @@
                 </div>
 
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">{{"Sign-up.Register" |translate}}</button>
                 </div>
 
                 <p class="text-center text-muted mt-2 mb-0">
-                    Have already an account?
-                    <a [routerLink]="['/user/sign-in']" class="fw-bold text-body login-link"><u>Login here</u></a
+                    {{"Sign-up.Already have an account" |translate}}
+                    <a [routerLink]="['/user/sign-in']" class="fw-bold text-body login-link"><u>{{"Sign-up.Login here" |translate}}</u></a
           >
         </p>
       </form>

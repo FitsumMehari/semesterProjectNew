@@ -2,23 +2,23 @@
     <div class="form card" style="border-radius: 15px">
         <div class="card-body">
             <h2 class="text-uppercase fs-4 text-center mb-3 form-title">
-                Update your profile
+                {{"Update-Profile.Update your profile" |translate}}
             </h2>
 
             <form #updateProfileForm="ngForm" (ngSubmit)="update()">
                 <div class="form-outline mb-2">
-                    <label class="" for="username">Your Name</label>
+                    <label class="" for="username">{{"Update-Profile.Name" |translate}}</label>
                     <input maxlength="12" type="text" [(ngModel)]="updatedUser.username" name="username" id="username" class="form-control" required/>
                 </div>
 
                 <div class="form-outline mb-2">
-                    <label class="" for="email">Your Email</label>
+                    <label class="" for="email">{{"Update-Profile.Email" |translate}}</label>
                     <input type="email" [(ngModel)]="updatedUser.email" name="email" id="email" class="form-control" required />
                 </div>
 
 
                 <div class="form-outline mb-2">
-                    <label class="" for="field-of-study">Field of Study</label>
+                    <label class="" for="field-of-study">{{"Update-Profile.Field of study" |translate}}</label>
                     <select id="field-of-study" [(ngModel)]="updatedUser.fieldofstudy" name="fieldofstudy" class="form-control form-select" required>
             <option
               class="form-control"
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary">{{"Update-Profile.Update Profile" |translate}}</button>
                 </div>
             </form>
         </div>

@@ -5,13 +5,13 @@
 
     <div *ngIf="materials" class="materials-card">
         <div>
-            <p class="title">Here are some Books related to your Field of Study.</p>
+            <p class="title">{{"Materials.Title" |translate}}</p>
         </div>
 
         <div class="mateials-list">
             <div class="header">
-                <p>{{fieldofstudy}} Books</p>
-                <p>Download File</p>
+                <p>{{fieldofstudy}} {{"Materials.Books" |translate}}</p>
+                <p>{{"Materials.Download File" |translate}}</p>
             </div>
             <div class="body">
 
