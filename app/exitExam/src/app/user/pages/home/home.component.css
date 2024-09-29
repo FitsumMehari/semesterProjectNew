@@ -237,3 +237,28 @@ footer .copyright {
     border-top: .1rem solid rgba(47, 58, 255, 0.5);
     width: 100%;
 }
+
+@media(max-width: 720px) {
+    .page {
+        overflow-x: hidden;
+    }
+    .banner-div {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .description-image img {
+        display: none;
+    }
+    footer .footer-sections {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer .footer-sections .footer-nav {
+        margin-top: 1rem;
+    }
+    footer .footer-sections .footer-buttons {
+        margin-top: 1rem;
+    }
+}

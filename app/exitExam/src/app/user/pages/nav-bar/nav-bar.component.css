@@ -22,3 +22,9 @@ nav {
     background-image: url("../../../../../public/iconmonstr-circle-1.svg");
     color: white;
 }
+
+@media(max-width: 375px) {
+    .logo img {
+        width: 12rem;
+    }
+}
