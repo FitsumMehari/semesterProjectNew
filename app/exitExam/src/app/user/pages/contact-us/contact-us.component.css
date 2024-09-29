@@ -5,10 +5,14 @@
 .banner {
     color: #0A215F;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
     width: 100vw;
     overflow-x: hidden;
+}
+
+.banner-content {
+    width: fit-content;
 }
 
 .banner-title {
@@ -35,8 +39,8 @@
 }
 
 .map {
-    height: 50%;
     width: 100%;
+    /* width: 100%; */
     padding: 3rem;
 }
 
@@ -123,4 +127,42 @@ footer .copyright {
     text-align: center;
     border-top: .1rem solid rgba(47, 58, 255, 0.5);
     width: 100%;
+}
+
+@media(max-width:992px) {
+    .banner-content {
+        max-width: 50%;
+    }
+    .map {
+        width: 100%;
+        padding: 0rem;
+    }
+}
+
+@media(max-width: 720px) {
+    .page {
+        overflow-x: hidden;
+    }
+    .banner-div {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .map {
+        display: none;
+    }
+    .description-image img {
+        display: none;
+    }
+    footer .footer-sections {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    footer .footer-sections .footer-nav {
+        margin-top: 1rem;
+    }
+    footer .footer-sections .footer-buttons {
+        margin-top: 1rem;
+    }
 }
