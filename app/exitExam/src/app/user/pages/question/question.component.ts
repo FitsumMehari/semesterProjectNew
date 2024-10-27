@@ -39,8 +39,7 @@ export class QuestionComponent implements OnInit {
         this.exam = next;
         this.startExam();
       });
-      this.timeLeft = 10800;
-
+    this.timeLeft = 10800;
   }
 
   setQuestionIndex(index: any) {
@@ -98,9 +97,21 @@ export class QuestionComponent implements OnInit {
 
   // selecting an answer for a question
   answer(choiceId: any, choice: any, questionIndex: any) {
-    this.resetChoiceLineStyles();
+    this.resetChoiceLineStyles()
 
-    document.getElementById(choiceId)?.classList.add('selected-choice');
+    // document.getElementById(choiceId)?.classList.add('selected-choice');
+
+    const optionElements = document.getElementsByClassName('choice-radio-btn');
+
+    for(let i = 0; i< optionElements.length; i++) {
+      optionElements[i].classList.replace('bi-circle-fill', 'bi-circle')
+    }
+
+    document
+      .getElementById('option-' + choiceId)
+      ?.classList.replace('bi-circle', 'bi-circle-fill');
+
+
 
     this.answers[questionIndex] = choice;
   }
