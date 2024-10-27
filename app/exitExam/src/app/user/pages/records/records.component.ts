@@ -24,7 +24,6 @@ export class RecordsComponent implements OnInit {
     this.resultService.getResultsForOneUser(this.userId)
     this.resultService._results.subscribe((next) => {
       this.results = next;
-      console.log(this.results);
     });
 
   }
