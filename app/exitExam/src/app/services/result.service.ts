@@ -20,6 +20,28 @@ export class ResultService {
     this._results.next(materials);
   }
 
+  getResultsForOneUser(userId: any) {
+    const url = environment.apiURL + 'score/:' + userId;
+
+    // const url = `http://localhost:3000/material/:${userId}`;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        token: `token ${localStorage.getItem('token')}`,
+      }),
+    };
+
+    return this.http.get(url, httpOptions).subscribe(
+      (next) => {
+        this.response = next;
+        this.message = this.response.message;
+
+        this.setResults(next);
+      },
+      (error) => {}
+    );
+  }
+
+
   getAllResults() {
     const url = environment.apiURL + 'admin-score/:all';
 
