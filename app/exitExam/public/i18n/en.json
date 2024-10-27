@@ -112,6 +112,9 @@
         "Books": "Books",
         "Download File": "Download File"
     },
+    "Records": {
+        "Title": "Here is your exam progress track history"
+    },
     "Update-Profile": {
         "Update your profile": "Update your profile",
         "Name": "Name",
