@@ -21,9 +21,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstLetterPipe } from '../first-word.pipe';
 import { AuthGuardService } from '../services/auth-guard.service';
 import { TutorialsComponent } from './pages/tutorials/tutorials.component';
+import { RecordsComponent } from './pages/records/records.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from '../app.module';
+import { FAQComponent } from './pages/faq/faq.component';
 
 
 const routes: Routes = [
@@ -36,8 +38,10 @@ const routes: Routes = [
       { path: 'sign-up', component: SignUpComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'contact-us', component: ContactUsComponent },
+      { path: 'faq', component: FAQComponent },
       { path: 'tutorials', component: TutorialsComponent, canActivate: [AuthGuardService] },
       { path: 'materials', component: MaterialsComponent, canActivate: [AuthGuardService] },
+      { path: 'records', component: RecordsComponent, canActivate: [AuthGuardService] },
       { path: 'exam', component: ExamHomeComponent, canActivate: [AuthGuardService] },
       { path: 'question', component: QuestionComponent, canActivate: [AuthGuardService] },
       { path: 'result', component: ResultComponent, canActivate: [AuthGuardService] },
@@ -70,7 +74,9 @@ const routes: Routes = [
     ResultComponent,
     MessageComponent,
     FirstLetterPipe,
-    TutorialsComponent
+    TutorialsComponent,
+    RecordsComponent,
+    FAQComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, TranslateModule],
   exports: [
