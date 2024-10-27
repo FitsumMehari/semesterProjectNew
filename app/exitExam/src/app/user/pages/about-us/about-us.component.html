@@ -94,7 +94,7 @@
                 <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">{{"About-us.Register" | translate}}</button>
                 <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">{{"About-us.Logout" | translate}}</button>
                 <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">{{"About-us.Login" | translate}}</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"About-us.Admin" | translate}}</button>
+                <!-- <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"About-us.Admin" | translate}}</button> -->
             </div>
         </div>
         <p class="copyright">&copy;{{"About-us.2024 Graduate Gateway" | translate}}</p>

@@ -59,7 +59,7 @@
                 <button *ngIf="!user.isLoggedIn" class="btn btn-primary" [routerLink]="['/user/sign-up']">{{"Contact.Register" | translate}}</button>
                 <button *ngIf="user.isLoggedIn" class="btn btn-light" (click)="logout()">{{"Contact.Logout" | translate}}</button>
                 <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/user/sign-in']">{{"Contact.Login" | translate}}</button>
-                <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"Contact.Admin" | translate}}</button>
+                <!-- <button *ngIf="!user.isLoggedIn" class="btn btn-light" [routerLink]="['/admin/sign-in']">{{"Contact.Admin" | translate}}</button> -->
             </div>
         </div>
         <p class="copyright">&copy;{{"Contact.2024 Graduate Gateway" | translate}}</p>
