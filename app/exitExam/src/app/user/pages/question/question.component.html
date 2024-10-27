@@ -28,7 +28,7 @@
               )
             ">
                         <!-- <input class="form-check-input choice-radio-btn" type="radio" name="choice"> -->
-                        <i class="bi bi-circle-fill choice-radio-btn"></i>
+                        <i id="option-{{ currentQuestion._id + choice.key }}" class="bi bi-circle choice-radio-btn"></i>
                         <p class="choice">{{ choice.key }}. {{ choice.value }}</p>
                     </div>
                 </div>
