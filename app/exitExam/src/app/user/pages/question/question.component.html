@@ -101,6 +101,13 @@
             {{"Question.Fail" |translate}}
         </p>
 
-        <button class="btn btn-information" (click)="exitPage()">{{"Question.Exit" |translate}}</button>
+        <button class="btn btn-danger" (click)="exitPage()">{{"Question.Exit" |translate}}</button>
+        <div class="exam-review">
+            <div *ngFor="let question of totalQuestions; let i=index">
+                <p>{{i+1}} {{question.question}}</p>
+                <p>Your answer: <b>{{answers[i]}}</b></p>
+                <p>Correct answer: <b>{{question.answer}}</b></p>
+            </div>
+        </div>
     </div>
 </div>

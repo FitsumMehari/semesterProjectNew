@@ -134,6 +134,15 @@
     color: rgb(35, 202, 35);
 }
 
+.exam-finished-content .exam-review {
+    max-height: 50vh;
+    border: 0.1rem solid #0a215f;
+    border-top: none;
+    overflow-y: scroll;
+    padding: 1rem;
+    padding-bottom: 1rem;
+}
+
 @media (max-width: 992px) {
     .navigation {
         display: none;
