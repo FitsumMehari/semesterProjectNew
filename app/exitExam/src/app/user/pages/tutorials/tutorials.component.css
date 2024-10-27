@@ -1,0 +1,21 @@
+.title {
+    margin: 0 2rem;
+}
+
+.videos {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2.5rem;
+    max-height: 82vh;
+    overflow-y: scroll;
+}
+
+.video {
+    max-width: 450px;
+    /* border: 1px red solid; */
+    max-width: fit-content;
+    margin-bottom: 1rem;
+}

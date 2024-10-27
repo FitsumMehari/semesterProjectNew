@@ -27,6 +27,9 @@ import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from '../app.module';
 import { FAQComponent } from './pages/faq/faq.component';
 
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
+
 
 const routes: Routes = [
   {
@@ -78,7 +81,7 @@ const routes: Routes = [
     RecordsComponent,
     FAQComponent
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, ReactiveFormsModule, TranslateModule, YouTubePlayerModule],
   exports: [
     UserComponent,
     HomeComponent,
