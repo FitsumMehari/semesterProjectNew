@@ -72,8 +72,8 @@ export class UserService {
     });
   }
 
-  deleteUser(userId: any) {
-    const url = environment.apiURL + 'admin-user/:' + userId;
+  deleteUser(user: any) {
+    const url = environment.apiURL + 'admin-user/:' + user._id;
     const httpOptions = {
       headers: new HttpHeaders({
         token: `token ${localStorage.getItem('token')}`,
