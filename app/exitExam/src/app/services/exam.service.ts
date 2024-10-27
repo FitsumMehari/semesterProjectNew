@@ -69,12 +69,13 @@ export class ExamService {
           examTitle: exam.examTitle,
           fieldofstudy: exam.fieldofstudy,
           username: user.username,
-          userId: user.id,
+          userId: user._id,
           examId: exam._id,
           score: `${score} / ${exam.questions.length}`,
         };
 
-        const url = environment.apiURL + 'score/:' + user.id;
+        const url = environment.apiURL + 'score/';
+
 
         const httpOptions = {
           headers: new HttpHeaders({
