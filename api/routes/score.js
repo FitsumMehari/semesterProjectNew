@@ -4,26 +4,26 @@ const { verifyTokenAndAuthorization, verifyToken } = require("./verifyToken");
 const Score = require("../models/Score");
 
 // Get Scores
-// router.get("/:fieldofstudy", verifyToken, async(req, res, next) => {
-//     let fieldofstudy = req.params.fieldofstudy.split(":")[1];
-//     let matches = fieldofstudy.match(/\d+/g);
-//     if (!matches) {
-//         try {
-//             const Scores = await Score.find({ fieldofstudy: fieldofstudy });
+router.get("/:userId", verifyToken, async(req, res, next) => {
+    let userId = req.params.userId.split(":")[1];
+    let matches = userId.match(/\d+/g);
+    if (!matches) {
+        try {
+            const Scores = await Score.find({});
 
-//             res.status(200).json(Scores);
-//         } catch (error) {
-//             next(error);
-//         }
-//     } else if (matches) {
-//         try {
-//             const Scores = await Score.find();
-//             res.status(200).json(Scores);
-//         } catch (error) {
-//             next(error);
-//         }
-//     }
-// });
+            res.status(200).json(Scores);
+        } catch (error) {
+            next(error);
+        }
+    } else if (matches) {
+        try {
+            const Scores = await Score.find({ userId: userId });
+            res.status(200).json(Scores);
+        } catch (error) {
+            next(error);
+        }
+    }
+});
 
 // Edit Score
 // router.put("/:userId", verifyToken, async(req, res, next) => {
@@ -40,11 +40,13 @@ const Score = require("../models/Score");
 // });
 
 // Add Score
-router.post("/:userId", verifyToken, async(req, res, next) => {
+router.post("/", verifyToken, async(req, res, next) => {
     try {
         const newScore = new Score(req.body);
 
         const savedScore = await newScore.save();
+
+
         res.status(201).json(savedScore);
     } catch (error) {
         next(error);
