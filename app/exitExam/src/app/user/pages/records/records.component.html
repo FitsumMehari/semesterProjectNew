@@ -1,1 +1,35 @@
-<p>records works!</p>
+<div class="container">
+    <div class="header">
+        <p class="h3">{{"Records.Title" | translate}}</p>
+
+    </div>
+    <div class="table">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Field Of Study</th>
+                    <th scope="col">Exam Title</th>
+                    <th scope="col">Result</th>
+                    <th scope="col">Date</th>
+
+                    <!-- <th scope="col">Action</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let result of results; let i = index">
+                    <th scope=" row ">{{ i + 1 }}</th>
+                    <td>{{ result.fieldofstudy }}</td>
+                    <td>{{ result.examTitle }}</td>
+                    <td>{{ result.score }}</td>
+                    <td>{{ result.updatedAt | date:'MMM-dd-yyyy hh:mm a'}}</td>
+
+                    <!-- <td>
+                      <i (click)="updateMaterial(material._id) " class="icon icon-edit bi bi-pencil "></i>
+                      <i (click)="deleteMaterial(material._id) " class="icon icon-delete bi bi-trash "></i>
+                  </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
