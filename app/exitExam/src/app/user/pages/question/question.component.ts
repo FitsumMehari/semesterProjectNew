@@ -3,6 +3,7 @@ import { QuestionService } from '../../../services/question.service';
 import { ExamService } from '../../../services/exam.service';
 import { timer } from 'rxjs';
 import { Router } from '@angular/router';
+import { Exam } from '../../Exam.interface';
 
 @Component({
   selector: 'app-question',
@@ -19,7 +20,7 @@ export class QuestionComponent implements OnInit {
   }
 
   examId: any;
-  exam: any;
+  exam: Exam = {};
   currentQuestion: any;
   currentQuestionIndex: any;
   totalQuestions: any;
