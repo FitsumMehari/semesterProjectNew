@@ -4,6 +4,8 @@
         "Exam": "Exam",
         "Tutorials": "Tutorials",
         "Materials": "Materials",
+        "Records": "Records",
+        "FAQ": "FAQ",
         "About Us": "About Us",
         "Contact": "Contact",
         "Sign-in": "Sign In",
@@ -109,6 +111,38 @@
         "Title": "Here are some Books related to your Field of Study.",
         "Books": "Books",
         "Download File": "Download File"
+    },
+    "Records": {
+        "Title": "Here is your exam progress track history",
+        "Field Of Study": "Field Of Study",
+        "ExamTitle": "ExamTitle",
+        "Result": "Result",
+        "Date": "Date"
+    },
+    "Tutorials": {
+        "Title": "Tutorial Videos"
+    },
+    "FAQ": {
+        "Title": "FAQs",
+
+        "question1": "How do I sign up?",
+        "answer1": "You go to the homepage, scroll down to the bottom and tab Register. Then all you have to do is fill out the form",
+
+        "question2": "How do I take the exams?",
+        "answer2": "On the home page, you'll find the menu for Exams. Once you go to Exams, Choose your field and continue doing the exams.",
+
+        "question3": "How do I know the grade of the exam?",
+        "answer3": "Once you finish the exam, the grade will be shown on the screen.",
+
+        "question4": "How can I modify my account?",
+        "answer4": "On the home page, you can click on your profile name, and there you can find your name, email and field of study. You can modify them there and once you are done, click the Update profile button.",
+
+        "question5": "Can I get a resource?",
+        "answer5": "Yes, there's a tutorial button on the home page where you can get various resources. Look for what you want and you can download them for offline uses.",
+
+        "question6": "How can I delete my account?",
+        "answer6": "If you want to delete your account, first you have to contact the admin. If the admin allows it, it'll be deleted."
+
     },
     "Update-Profile": {
         "Update your profile": "Update your profile",
