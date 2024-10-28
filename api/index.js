@@ -23,6 +23,7 @@ const materialRoute = require("./routes/material");
 const tutorialRoute = require("./routes/tutorial");
 const adminUserRoute = require("./routes/admin-user");
 const adminMaterialRoute = require("./routes/admin-material");
+const adminTutorialRoute = require("./routes/admin-tutorial");
 const adminScoreRoute = require("./routes/admin-result");
 const adminExamRoute = require("./routes/admin-exam");
 
@@ -51,6 +52,7 @@ app.use("/material", materialRoute);
 app.use("/tutorial", tutorialRoute);
 app.use("/admin-user", adminUserRoute);
 app.use("/admin-material", adminMaterialRoute);
+app.use("/admin-tutorial", adminTutorialRoute);
 app.use("/admin-score", adminScoreRoute);
 app.use("/admin-exam", adminExamRoute);
 
