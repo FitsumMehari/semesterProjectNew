@@ -25,6 +25,10 @@ import { DeleteQuestionComponent } from './pages/delete-question/delete-question
 import { EditQuestionComponent } from './pages/edit-question/edit-question.component';
 import { AddQuestionComponent } from './pages/add-question/add-question.component';
 import { AddExamComponent } from './pages/add-exam/add-exam.component';
+import { TutorialsComponent } from './pages/tutorials/tutorials.component';
+import { EditTutorialComponent } from './pages/edit-tutorial/edit-tutorial.component';
+import { AddTutorialComponent } from './pages/add-tutorial/add-tutorial.component';
+import { DeleteTutorialComponent } from './pages/delete-tutorial/delete-tutorial.component';
 
 const routes: Routes = [
   {
@@ -80,6 +84,22 @@ const routes: Routes = [
       {
         path: 'add-material',
         component: AddMaterialComponent,
+      },
+      {
+        path: 'tutorials',
+        component: TutorialsComponent,
+      },
+      {
+        path: 'edit-tutorial/:tutorialId',
+        component: EditTutorialComponent,
+      },
+      {
+        path: 'delete-tutorial/:tutorialId',
+        component: DeleteTutorialComponent,
+      },
+      {
+        path: 'add-tutorial',
+        component: AddTutorialComponent,
       },
       {
         path: 'overview',
@@ -151,7 +171,11 @@ const routes: Routes = [
     DeleteQuestionComponent,
     EditQuestionComponent,
     AddQuestionComponent,
-    AddExamComponent, //refactored
+    AddExamComponent,
+    TutorialsComponent,
+    EditTutorialComponent,
+    AddTutorialComponent,
+    DeleteTutorialComponent, //refactored
   ],
   imports: [
     CommonModule,
