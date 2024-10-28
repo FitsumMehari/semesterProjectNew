@@ -1,0 +1,57 @@
+<div>
+    <div *ngIf="!tutorialsFound" class="spinner-container">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <div *ngIf="tutorialsFound" class="container">
+        <div class="header">
+            <p class="h3">Tutorials</p>
+            <div class="mb-4 search-box" style="position: relative">
+                <input type="text" id="textInput" placeholder="Enter data to filter by" class="form-control" name="filterInput" [(ngModel)]="filterInput" />
+                <i class="fa-solid fa-filter" style="
+cursor: pointer;
+position: absolute;
+top: 0.6rem;
+right: 0.7rem;
+z-index: 100;
+"></i>
+
+                <label class="form-label" for="textInput">Filter</label>
+            </div>
+        </div>
+        <div class="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Field of study</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">VideoId</th>
+
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tutorial of tutorials |filter:filterInput; let i = index">
+                        <th scope=" row ">{{i + 1}}</th>
+                        <td>{{tutorial.fieldofstudy}}</td>
+                        <td>{{tutorial.title}}</td>
+                        <td>{{tutorial.videoId}}</td>
+                        <!-- <td *ngIf="material.materialType =='student'">{{material.materialType}}</td>
+                  <td *ngIf="material.materialType =='admin'" style="color: rgb(255, 0, 0);">{{material.materialType}}</td> -->
+                        <td>
+                            <i (click)="updateTutorial(tutorial._id) " class="icon icon-edit bi bi-pencil "></i>
+                            <i (click)="deleteTutorial(tutorial._id) " class="icon icon-delete bi bi-trash "></i>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+        <div class="add-material">
+            <button class="btn btn-primary" [routerLink]="['/admin/home/add-tutorial']">Add Tutorial</button>
+        </div>
+    </div>
