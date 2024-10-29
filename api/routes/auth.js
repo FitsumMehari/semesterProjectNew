@@ -22,15 +22,13 @@ router.post("/register", async(req, res, next) => {
     ) {
         res.status(200).json({ message: "Please fill the required inputs!" });
     } else {
-
         // Check if user email exists
         const existingUser = await User.findOne({
-            email: req.body.email
-
-        })
+            email: req.body.email,
+        });
 
         if (!!existingUser) {
-            return res.status(200).json({ message: "Email already taken!" })
+            return res.status(200).json({ message: "Email already taken!" });
         }
 
         const newUser = new User({
@@ -39,6 +37,8 @@ router.post("/register", async(req, res, next) => {
             email: req.body.email,
             userType: "student",
             fieldofstudy: req.body.fieldofstudy,
+            securityQuestion: req.body.securityQuestion,
+            securityAnswer: req.body.securityAnswer,
         });
         try {
             const savedUser = await newUser.save();
@@ -81,6 +81,8 @@ router.post("/login", async(req, res, next) => {
                     username: user.username,
                     userType: user.userType,
                     fieldofstudy: user.fieldofstudy,
+                    securityQuestion: user.securityQuestion,
+                    securityAnswer: user.securityAnswer,
                     isLoggedIn: true,
                 },
                 jwtPrivateKey, {
@@ -90,9 +92,7 @@ router.post("/login", async(req, res, next) => {
 
             const { password, ...userDetails } = user._doc;
 
-            res
-                .status(200)
-                .json({ message: "Log In Successful!", accessToken });
+            res.status(200).json({ message: "Log In Successful!", accessToken });
         } catch (err) {
             return next(err);
         }
@@ -140,9 +140,7 @@ router.post("/loginAdmin", async(req, res, next) => {
 
             const { password, ...userDetails } = user._doc;
 
-            res
-                .status(200)
-                .json({ message: "Log In Successful!", accessToken });
+            res.status(200).json({ message: "Log In Successful!", accessToken });
         } catch (err) {
             return next(err);
         }
@@ -151,12 +149,15 @@ router.post("/loginAdmin", async(req, res, next) => {
 
 // Update
 router.put("/update", verifyToken, async(req, res, next) => {
+    console.log(res.body);
 
     try {
         const user = await User.findByIdAndUpdate(req.body._id, {
             username: req.body.username,
             email: req.body.email,
-            fieldofstudy: req.body.fieldofstudy
+            fieldofstudy: req.body.fieldofstudy,
+            securityQuestion: req.body.securityQuestion,
+            securityAnswer: req.body.securityAnswer,
         });
 
         const accessToken = jwt.sign({
@@ -166,19 +167,82 @@ router.put("/update", verifyToken, async(req, res, next) => {
                 username: user.username,
                 userType: user.userType,
                 fieldofstudy: user.fieldofstudy,
+                securityQuestion: user.securityQuestion,
+                securityAnswer: user.securityAnswer,
                 isLoggedIn: true,
             },
             jwtPrivateKey, {
                 expiresIn: "7d",
             }
         );
-        res
-            .status(201)
-            .json({ message: "Update Successful!", accessToken });
+        res.status(201).json({ message: "Update Successful!" });
     } catch (error) {
         next(error);
     }
 });
 
+// Forgot Password
+router.put("/changep", async(req, res, next) => {
+    const securityQuestion = req.body.securityQuestion;
+    const securityAnswer = req.body.securityAnswer;
+    console.log(req.body);
+
+
+    if (!req.body.securityAnswer ||
+        !req.body.password ||
+        !req.body.email
+    ) {
+        res.status(400).json("Please fill the required inputs!");
+    } else {
+        try {
+            const user = await User.findOne({
+                email: req.body.email,
+            });
+
+            // !user && res.status(401).json("Wrong Credientials!");
+            if (!user) {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            }
+
+            // !user && res.status(401).json("Wrong Credientials!");
+            if (user.securityAnswer != req.body.securityAnswer) {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            } else {
+                try {
+                    const user = await User.findOneAndUpdate({ email: req.body.email }, {
+                        password: md5(req.body.password),
+                    });
+
+                    res.status(201).json({ message: "Password Change Successful!" });
+                } catch (error) {
+                    next(error);
+                }
+            }
+        } catch (err) {
+            return next(err);
+        }
+    }
+});
+
+router.post("/getSecurityQuestion", async(req, res, next) => {
+    if (!req.body.email) {
+        res.status(400).json("Please fill the required inputs!");
+    } else {
+        try {
+            const user = await User.findOne({ email: req.body.email });
+
+            // !user && res.status(401).json("Wrong Credientials!");
+            if (!user) {
+                return res.status(401).json({ message: "Wrong Credientials!" });
+            }
+
+            const securityQuestion = user.securityQuestion
+
+            res.status(200).json({ message: "Email Verified!", "securityQuestion": securityQuestion });
+        } catch (err) {
+            return next(err);
+        }
+    }
+});
 
 module.exports = router;
