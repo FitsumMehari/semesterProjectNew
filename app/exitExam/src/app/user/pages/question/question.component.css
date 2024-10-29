@@ -43,6 +43,10 @@
     background-color: #dfedf6;
     padding: 3rem;
     border-radius: 1rem;
+    width: 50vw;
+    max-height: 60vh;
+    overflow-x: wrap;
+    overflow-y: scroll;
 }
 
 .question {
