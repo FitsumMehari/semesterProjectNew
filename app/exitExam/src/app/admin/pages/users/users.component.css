@@ -27,6 +27,11 @@ select {
     scrollbar-width: none;
 }
 
+td {
+    max-width: 20rem;
+    overflow: auto;
+}
+
 .icon {
     margin-right: 1rem;
     cursor: pointer;
