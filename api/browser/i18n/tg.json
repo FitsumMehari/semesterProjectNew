@@ -81,6 +81,8 @@
         "Email": "ኢ-ሜይል",
         "Password": "መሕለፊ ቓል",
         "Repeat Password": "መሕለፊ ቓሎም ይድገሙ",
+        "SecurityQuestion": "መረጋገጺ ሕቶ",
+        "SecurityAnswer": "መረጋገጺ መልሲ",
         "Field of study": "ዓውዲ መጽናዕቲ",
         "Already have an account": "ኣካውንት ኣለኩም ድዩ?",
         "Register": "ይመዝገቡ",
@@ -142,6 +144,8 @@
         "Email": "ኢ-ሜይል",
         "Password": "መሕለፊ ቓል",
         "Repeat Password": "መሕለፊ ቓሎም ይድገሙ",
+        "SecurityQuestion": "መረጋገጺ ሕቶ",
+        "SecurityAnswer": "መረጋገጺ መልሲ",
         "Field of study": "ዓውዲ መጽናዕቲ ",
         "Update Profile": "መለለይ ኣዘምን"
     }

@@ -81,6 +81,8 @@
         "Email": "ኢሜይል",
         "Password": "የይለፍ ቃል",
         "Repeat Password": "የይለፍ ቃል ድገም",
+        "SecurityQuestion": "ማረጋገጫ ጥያቂ",
+        "SecurityAnswer": "ማረጋገጫ መልስ",
         "Field of study": "የጥናት መስክ",
         "Already have an account": "መለያ አለዎት?",
         "Register": "ይመዝገቡ",
@@ -149,6 +151,8 @@
         "Email": "ኢሜይል",
         "Password": "የይለፍ ቃል",
         "Repeat Password": "የይለፍ ቃል ድገም",
+        "SecurityQuestion": "ማረጋገጫ ጥያቂ",
+        "SecurityAnswer": "ማረጋገጫ መልስ",
         "Field of study": "የጥናት መስክ",
         "Update Profile": "መገለጫ ያዘምኑ"
     }
