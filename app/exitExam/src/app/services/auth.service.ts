@@ -120,7 +120,6 @@ export class AuthService implements OnInit {
   }
 
   sendEmail(user: User) {
-    console.log('here');
 
     const url = environment.apiURL + 'auth/getSecurityQuestion';
 
