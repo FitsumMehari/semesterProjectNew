@@ -8,4 +8,6 @@ export interface User {
   fieldofstudy?: string;
   isLoggedIn?: boolean,
   isAdmin?: boolean,
+  securityQuestion?: string,
+  securityAnswer?: string
 }
