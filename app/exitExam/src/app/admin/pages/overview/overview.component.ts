@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MaterialService } from '../../../services/material.service';
 import { UserService } from '../../../services/user.service';
 import { ExamService } from '../../../services/exam.service';
+import { TutorialService } from '../../../services/tutorial.service';
 
 @Component({
   selector: 'app-overview',
@@ -9,28 +10,40 @@ import { ExamService } from '../../../services/exam.service';
   styleUrl: './overview.component.css',
 })
 export class OverviewComponent implements OnInit {
-  constructor(private matService: MaterialService, private userService: UserService, private examService: ExamService) {}
+  constructor(
+    private matService: MaterialService,
+    private userService: UserService,
+    private examService: ExamService,
+    private tutorialService: TutorialService
+  ) {}
 
-  users: any = []
-  materials: any
-  exams: any
+  users: any = [];
+  materials: any;
+  exams: any;
+  tutorials: any;
 
   ngOnInit(): void {
     this.refreshMaterialsList();
     this.refreshUsersList();
     this.refreshExamsList();
-
+    this.refreshTutorialsList();
   }
-   // Refresh The Lists
-   refreshMaterialsList() {
+  // Refresh The Lists
+  refreshMaterialsList() {
     this.matService.getAllMaterials();
     this.matService._materials.subscribe((next) => {
       this.materials = next;
     });
   }
 
+  refreshTutorialsList() {
+    this.tutorialService.getAllTutorials();
+    this.tutorialService._tutorials.subscribe((next) => {
+      this.tutorials = next;
+    });
+  }
 
-   refreshExamsList() {
+  refreshExamsList() {
     this.examService.getAllExams();
     this.examService._exams.subscribe((next) => {
       this.exams = next;
