@@ -28,7 +28,7 @@ export class TutorialService {
 
 
   getTutorials(fieldofstudy: string) {
-    const url = environment.apiURL + 'admin-tutorial/:' + fieldofstudy;
+    const url = environment.apiURL + 'tutorial/:' + fieldofstudy;
 
     const httpOptions = {
       // headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
