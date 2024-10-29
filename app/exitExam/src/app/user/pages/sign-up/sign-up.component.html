@@ -31,6 +31,15 @@
                 </div>
 
                 <div class="form-outline mb-2">
+                    <label class=" " for="securityQuestion">{{"Sign-up.SecurityQuestion" |translate}}*</label>
+                    <input type="text" [(ngModel)]="user.securityQuestion" name="securityQuestion" id="securityQuestion" class="form-control" required />
+                </div>
+                <div class="form-outline mb-2">
+                    <label class=" " for="securityAnswer">{{"Sign-up.SecurityAnswer" |translate}}*</label>
+                    <input type="text" [(ngModel)]="user.securityAnswer" name="securityAnswer" id="securityAnswer" class="form-control" required />
+                </div>
+
+                <div class="form-outline mb-2">
                     <label class=" " for="field-of-study">{{"Sign-up.Field of study" |translate}}*</label>
                     <select [(ngModel)]="user.fieldofstudy" name="fieldofstudy" id="field-of-study" class="form-control form-select" required>
                       <option class="form-control" value="Electrical and Computer Engineering">Electrical and Computer Engineering</option>

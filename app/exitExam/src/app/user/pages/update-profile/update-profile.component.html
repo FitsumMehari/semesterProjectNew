@@ -16,6 +16,15 @@
                     <input type="email" [(ngModel)]="updatedUser.email" name="email" id="email" class="form-control" required />
                 </div>
 
+                <div class="form-outline mb-2">
+                    <label class=" " for="securityQuestion">{{"Sign-up.SecurityQuestion" |translate}}*</label>
+                    <input type="text" [(ngModel)]="updatedUser.securityQuestion" name="securityQuestion" id="securityQuestion" class="form-control" required />
+                </div>
+                <div class="form-outline mb-2">
+                    <label class=" " for="securityAnswer">{{"Sign-up.SecurityAnswer" |translate}}*</label>
+                    <input type="text" [(ngModel)]="updatedUser.securityAnswer" name="securityAnswer" id="securityAnswer" class="form-control" required />
+                </div>
+
 
                 <div class="form-outline mb-2">
                     <label class="" for="field-of-study">{{"Update-Profile.Field of study" |translate}}</label>
