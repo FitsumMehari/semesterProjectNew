@@ -82,6 +82,8 @@
         "Email": "Email",
         "Password": "Password",
         "Repeat Password": "Repeat Password",
+        "SecurityQuestion": "Security Question",
+        "SecurityAnswer": "Security Answer",
         "Field of study": "Field of study",
         "Already have an account": "Already have an account?",
         "Register": "Register",
@@ -150,6 +152,8 @@
         "Email": "Email",
         "Password": "Password",
         "Repeat Password": "Repeat Password",
+        "SecurityQuestion": "Security Question",
+        "SecurityAnswer": "Security Answer",
         "Field of study": "Field of study",
         "Update Profile": "Update Profile"
     }
