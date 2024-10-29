@@ -41,6 +41,7 @@ export class AuthService implements OnInit {
 
   // Update User
   updateUser(user: User) {
+
     const url = environment.apiURL + 'auth/update';
 
     const httpOptions = {
@@ -56,9 +57,8 @@ export class AuthService implements OnInit {
         this.message = this.response.message;
         localStorage.setItem('token', this.response.accessToken);
 
-
         alert(this.message);
-        alert("You need to sign in again!");
+        alert('You need to sign in again!');
         localStorage.clear();
         this.setUser();
         this.router.navigate(['/user/sign-in']);
@@ -69,9 +69,8 @@ export class AuthService implements OnInit {
 
   // Register
   register(user: User) {
-
-    if(!user) {
-       alert("Please fill the required inputs!")
+    if (!user) {
+      alert('Please fill the required inputs!');
       this.router.navigate(['/user/sign-up']);
     }
     const url = environment.apiURL + 'auth/register';
@@ -86,9 +85,8 @@ export class AuthService implements OnInit {
         this.message = this.response.message;
         localStorage.setItem('token', this.response.accessToken);
 
-
         alert(this.message);
-        alert("You need to sign in!");
+        alert('You need to sign in!');
         localStorage.clear();
         this.setUser();
         this.router.navigate(['/user/sign-in']);
@@ -116,7 +114,59 @@ export class AuthService implements OnInit {
         this.router.navigate(['/user/home']);
       },
       (error) => {
-        alert("Wrong Credientials")
+        alert('Wrong Credientials');
+      }
+    );
+  }
+
+  sendEmail(user: User) {
+    console.log('here');
+
+    const url = environment.apiURL + 'auth/getSecurityQuestion';
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+
+    this.http.post(url, user, httpOptions).subscribe(
+      (next) => {
+        this.response = next;
+        this.message = this.response.message;
+        // localStorage.setItem('token', this.response.accessToken);
+
+        this._user.next(next);
+        this.response = next;
+        alert(this.response.message);
+
+        this.router.navigate(['/user/create-new-password']);
+      },
+      (error) => {
+        alert('Wrong Credientials');
+      }
+    );
+  }
+
+  sendPassword(user: User) {
+    const url = environment.apiURL + 'auth/changep';
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    };
+
+    this.http.put(url, user, httpOptions).subscribe(
+      (next) => {
+        this.response = next;
+        this.message = this.response.message;
+        // localStorage.setItem('token', this.response.accessToken);
+
+        this._user.next(next);
+        this.response = next;
+        alert(this.response.message);
+
+        this.router.navigate(['/user/home']);
+      },
+      (error) => {
+        alert('Wrong Credientials');
       }
     );
   }
@@ -140,7 +190,7 @@ export class AuthService implements OnInit {
         this.router.navigate(['/admin/home']);
       },
       (error) => {
-        alert("Wrong Credientials")
+        alert('Wrong Credientials');
       }
     );
   }
