@@ -1,10 +1,12 @@
-<h3 class="title">{{"Tutorials.Title"|translate }}</h3>
-<div class="videos">
-    <div *ngFor="let item of tutorials">
-        <div class="video">
-            <youtube-player [videoId]="item.videoId" [height]="height" [width]="width">
-            </youtube-player>
-            <p class="p-2 h6">{{item.title}}</p>
+<div class="page">
+    <h3 class="title">{{"Tutorials.Title"|translate }}</h3>
+    <div class="videos">
+        <div *ngFor="let item of tutorials">
+            <div class="video">
+                <youtube-player [videoId]="item.videoId" [height]="height" [width]="width">
+                </youtube-player>
+                <p class="p-2 h6">{{item.title}}</p>
+            </div>
         </div>
     </div>
 </div>
