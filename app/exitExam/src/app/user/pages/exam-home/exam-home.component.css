@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(0.5turn, #5B6590, #fff);
+    color: #0A215F;
 }
 
 .page-card {
@@ -15,7 +17,10 @@
 .title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: rgb(167, 167, 167);
+    /* color: rgb(167, 167, 167); */
+    color: #0A215F;
+    font-weight: bold;
+    font-size: 2rem;
     margin-bottom: 3rem;
 }
 

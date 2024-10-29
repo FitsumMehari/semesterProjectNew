@@ -1,8 +1,22 @@
+.page {
+    background: linear-gradient(0.5turn, #5B6590, #fff);
+    height: 80vh;
+    color: #0A215F;
+}
+
+.h3 {
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 2rem
+}
+
 .header {
     width: 50vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: bold;
+    font-size: 2rem
 }
 
 .search-box {
