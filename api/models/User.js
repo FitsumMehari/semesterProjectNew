@@ -20,6 +20,14 @@ const UserSchema = new mongoose.Schema({
     fieldofstudy: {
         type: String,
         required: false,
+    },
+    securityQuestion: {
+        type: String,
+        required: false,
+    },
+    securityAnswer: {
+        type: String,
+        required: false,
     }
 }, {
     timestamps: true,
